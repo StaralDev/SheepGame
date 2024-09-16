@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=4 uid="uid://cixi1q8mhkjt4"]
+
+[ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
+[ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/icon.svg" id="2_c24ag"]
+[ext_resource type="PackedScene" uid="uid://dov5ysi8pmn0q" path="res://Replicatables/Enemy.tscn" id="3_sqkig"]
+[ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="4_l4c8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
+size = Vector2(128, 128)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kg8hg"]
+vertices = PackedVector2Array(1546, -138, 758, -138, 394, -246, 394, -394, 1546, 1034, 2864.54, 1945.43, -1832.06, 1698.55, 118, 1034, 2738.41, -1014.95, -1579.88, -996.031, -630, -374, -630, -522, -10, -394, -10, -266, -394, -266, -758, -246, -758, -374, -394, 138, 118, 246, -246, 138, -246, -118, 138, -118, 394, 246, 138, -246, 630, 246, 758, 246, 906, 394, 906, 10, 1398, 10, 1398, 886, 266, 886, 630, 394, 266, 394, 394, 394, -1034, -522, -1034, -246)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 5, 4, 0), PackedInt32Array(9, 8, 0, 3), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(15, 16, 10, 14, 17), PackedInt32Array(18, 19, 20, 21, 22), PackedInt32Array(21, 23, 2, 1, 24, 22), PackedInt32Array(1, 25, 24), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(26, 29, 30, 31), PackedInt32Array(30, 32, 33), PackedInt32Array(31, 30, 33, 24), PackedInt32Array(24, 33, 22), PackedInt32Array(9, 3, 12, 11), PackedInt32Array(9, 11, 34), PackedInt32Array(6, 9, 34, 35), PackedInt32Array(7, 6, 35, 15, 17), PackedInt32Array(19, 18, 7, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1589, -1006, 2748, -1025, 2875, 1956, -1843, 1708)])
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Sparky" parent="." instance=ExtResource("1_ojl2g")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_sqkig")]
+position = Vector2(-694, 0)
+
+[node name="GenericObject" type="Sprite2D" parent="."]
+position = Vector2(-130.5, -55.5)
+scale = Vector2(0.507812, 0.523438)
+texture = ExtResource("2_c24ag")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GenericObject"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GenericObject/StaticBody2D"]
+shape = SubResource("RectangleShape2D_fcsmf")
+debug_color = Color(0.486938, 0.434444, 1, 0.42)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_kg8hg")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD4//3/AAAAAAAAAAD4//z/AAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAALAAIAAAAAAAAAAAALAAEAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAA=")
+tile_set = ExtResource("4_l4c8n")

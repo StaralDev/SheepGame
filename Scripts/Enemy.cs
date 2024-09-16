@@ -16,19 +16,23 @@ public partial class Enemy : CharacterBody2D
 
     public override void _Ready()
     {
-		sparky = Overworld.GetSparky(GetTree());
-
         sprite = GetNode<AnimatedSprite2D>("Sprite");
 		enemyCollider = GetNode<CollisionShape2D>("EnemyCollider");
 		enemySightbox = GetNode<Area2D>("EnemySightbox");
 		enemySightboxCollider = enemySightbox.GetNode<CollisionShape2D>("EnemySightboxCollider");
 		navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+	
+		
 	}
 
     public override void _PhysicsProcess(double delta)
     {
-        navigationAgent.TargetPosition = Position;
-    }
+		sparky ??= Overworld.GetSparky(GetTree());
+
+        navigationAgent.TargetPosition = sparky.Position;
+		Velocity = Position - navigationAgent.GetNextPathPosition();
+		MoveAndCollide(Velocity);
+	}
 
     public override void _Process(double delta)
     {

@@ -1,18 +1,23 @@
 using Godot;
+using SheepGame;
 using System;
 
 public partial class Enemy : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 
-	public AnimatedSprite2D sprite;
-	public CollisionShape2D enemyCollider;
-	public Area2D enemySightbox;
-	public CollisionShape2D enemySightboxCollider;
-	public NavigationAgent2D navigationAgent;
+	private Sparky sparky;
+
+	private AnimatedSprite2D sprite;
+	private CollisionShape2D enemyCollider;
+	private Area2D enemySightbox;
+	private CollisionShape2D enemySightboxCollider;
+	private NavigationAgent2D navigationAgent;
 
     public override void _Ready()
     {
+		sparky = Overworld.GetSparky(GetTree());
+
         sprite = GetNode<AnimatedSprite2D>("Sprite");
 		enemyCollider = GetNode<CollisionShape2D>("EnemyCollider");
 		enemySightbox = GetNode<Area2D>("EnemySightbox");

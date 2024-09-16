@@ -3,7 +3,7 @@ using Godot;
 
 namespace SheepGame
 {
-    public class Overworld
+    class Overworld
     {
 
 /// <summary>
@@ -11,13 +11,18 @@ namespace SheepGame
 /// please don't use this often, just use it at the start of your script pls
 /// </summary>
 /// <returns>Sparky</returns>
-        //public Sparky GetSparky(SceneTree sceneTree)
-     //   {
-      //      foreach(Godot.Node node in sceneTree.CurrentScene.GetChildren(true))
-      //      {
-//
-     //       }
-//}
+        public static Sparky GetSparky(SceneTree sceneTree)
+        {
+            foreach(Node node in sceneTree.CurrentScene.GetChildren(true))
+            {
+                if (typeof(Sparky) == node.GetType())
+                {
+                    return node as Sparky;
+                }
+            }
+
+            return null;
+        }
 
     }
 }

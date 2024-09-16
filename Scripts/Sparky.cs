@@ -4,7 +4,6 @@ using System;
 public partial class Sparky : CharacterBody2D
 {
 	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
 
 	private Vector2 lastDirection;
 

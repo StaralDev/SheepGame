@@ -15,7 +15,7 @@ public partial class Global : Godot.Node
         SceneTree tree = GetTree();
         tree.CurrentScene.QueueFree();
 
-        var newScene = Overworld.InstantiateScene<Node>(packedScene);
+        var newScene = Overworld.InstantiateScene(packedScene);
         tree.Root.AddChild(newScene);
         tree.CurrentScene = newScene;
     }

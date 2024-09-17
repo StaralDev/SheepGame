@@ -14,6 +14,7 @@ public partial class Enemy : CharacterBody2D
 	private Area2D enemySightbox;
 	private CollisionShape2D enemySightboxCollider;
 	private NavigationAgent2D navigationAgent;
+	private Area2D enemyKillbox;
 
 	private bool allowProcess;
 
@@ -28,8 +29,17 @@ public partial class Enemy : CharacterBody2D
 		enemySightbox = GetNode<Area2D>("EnemySightbox");
 		enemySightboxCollider = enemySightbox.GetNode<CollisionShape2D>("EnemySightboxCollider");
 		navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+		enemyKillbox = GetNode<Area2D>("EnemyKillbox");
 
 		CallDeferred(MethodName.Setup);
+
+		enemyKillbox.AreaEntered += (myArea) => {
+			Node parent = myArea.GetParent();
+			if (myArea.Name == "SheepHitbox" && parent.GetType() == typeof(Sparky))
+			{
+				Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());
+			}
+		};
 	}
 
     public override void _PhysicsProcess(double delta)

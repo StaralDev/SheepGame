@@ -24,25 +24,32 @@ namespace SheepGame
             return null;
         }
 
-        public static T InstantiateScene<T>(PackedScene packedScene)
+        public static Node InstantiateScene(PackedScene packedScene)
         {
-            var newScene = packedScene.Instantiate<Godot.Node>();
-            return (T)Convert.ChangeType(newScene, typeof(T));
+            var newScene = packedScene.Instantiate<Node>();
+            return newScene;
         }
 
-        public static T InstantiateScene<T>(string scenePath)
+        public static Node InstantiateScene(string scenePath)
         {
-            return InstantiateScene<T>(GD.Load<PackedScene>(scenePath));
+            return InstantiateScene(GD.Load<PackedScene>(scenePath));
         }
 
-        public static void ChangeScene()
+        public static Global GetGlobal(SceneTree sceneTree)
         {
-            
+            return sceneTree.Root.GetNode<Global>("/root/Global");
         }
 
-        private static void changeSceneDefered()
+        public static void ChangeScene(PackedScene newScene, SceneTree sceneTree)
         {
+            var myGlobal = GetGlobal(sceneTree);
+            myGlobal.SetScene(newScene);
+        }
 
+        public static void ChangeScene(string scenePath, SceneTree sceneTree)
+        {
+            var myGlobal = GetGlobal(sceneTree);
+            myGlobal.SetScene(GD.Load<PackedScene>(scenePath));
         }
 
     }

@@ -53,6 +53,7 @@ public partial class Sparky : CharacterBody2D
 		sheepTouchboxCollider.Rotation = Mathf.DegToRad(90f - (lastDirection.Y * 90f));
 
 		Velocity = velocity;
+		//MoveAndCollide(velocity*(float)delta);
 		MoveAndSlide();
 	}
 }

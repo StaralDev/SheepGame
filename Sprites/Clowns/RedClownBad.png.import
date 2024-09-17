@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://c3vd3blag6y7o"
-
-path="res://.godot/imported/SparkySpriteSheet.png-04aec7999cf9698251903cc5ce38e6f4.ctex"
+uid="uid://6xu4grw28a8x"
+path="res://.godot/imported/RedClownBad.png-eef3abc8adf1656e0aa754470b638fdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/SparkySpriteSheet.png"
-dest_files=["res://.godot/imported/SparkySpriteSheet.png-04aec7999cf9698251903cc5ce38e6f4.ctex"]
+source_file="res://Sprites/Clowns/RedClownBad.png"
+dest_files=["res://.godot/imported/RedClownBad.png-eef3abc8adf1656e0aa754470b638fdb.ctex"]
 
 [params]
 

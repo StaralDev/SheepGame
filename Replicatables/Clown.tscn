@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtpu257m6o73c"]
+
+[ext_resource type="PackedScene" uid="uid://dov5ysi8pmn0q" path="res://Replicatables/Enemy.tscn" id="1_ca330"]
+[ext_resource type="Script" path="res://Scripts/Clown.cs" id="2_735fd"]
+[ext_resource type="SpriteFrames" uid="uid://pyy57teew5vj" path="res://Resources/DefaultSpriteFrames.tres" id="3_3d7qv"]
+
+[node name="Clown" instance=ExtResource("1_ca330")]
+script = ExtResource("2_735fd")
+spriteFrames = ExtResource("3_3d7qv")
+
+[node name="Sprite" parent="." index="0"]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("3_3d7qv")
+animation = &"WalkDown"
+frame_progress = 0.559815
+
+[node name="EnemyKillboxCollider" parent="EnemyKillbox" index="0"]
+scale = Vector2(11, 11)

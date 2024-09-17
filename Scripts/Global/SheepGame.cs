@@ -3,6 +3,13 @@ using Godot;
 
 namespace SheepGame
 {
+    public enum Balloons {
+        Red,
+        Yellow,
+        Green,
+        Blue
+    }
+
     class Overworld
     {
 

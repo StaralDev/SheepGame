@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
 [ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/icon.svg" id="2_c24ag"]
-[ext_resource type="PackedScene" uid="uid://dov5ysi8pmn0q" path="res://Replicatables/Enemy.tscn" id="3_sqkig"]
+[ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="4_hi7pb"]
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="4_l4c8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
@@ -16,9 +16,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1589, -1006, 2748, -10
 [node name="TestScene" type="Node2D"]
 
 [node name="Sparky" parent="." instance=ExtResource("1_ojl2g")]
-
-[node name="Enemy" parent="." instance=ExtResource("3_sqkig")]
-position = Vector2(-694, 0)
 
 [node name="GenericObject" type="Sprite2D" parent="."]
 position = Vector2(-130.5, -55.5)
@@ -37,3 +34,6 @@ navigation_polygon = SubResource("NavigationPolygon_kg8hg")
 [node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
 tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAALAAIAAAAAAAAAAAALAAEAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAP//AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9//7/AAAAAAAAAAD5//z/AAAAAAAAAAD4//z/AAAAAAAAAAD4//3/AAAAAAAAAAD5//3/AAAAAAAAAAD6//z/AAAAAAAAAAA=")
 tile_set = ExtResource("4_l4c8n")
+
+[node name="Clown" parent="." instance=ExtResource("4_hi7pb")]
+position = Vector2(-625, 1)

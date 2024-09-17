@@ -4,17 +4,17 @@ using System;
 
 public partial class Enemy : CharacterBody2D
 {
-	public const float WalkSpeed = 3.0f;
+	public const float WalkSpeed = 0f;
 	public const float RunSpeed = 4.5f;
 
 	private Sparky sparky;
 
-	private AnimatedSprite2D sprite;
-	private CollisionShape2D enemyCollider;
-	private Area2D enemySightbox;
-	private CollisionShape2D enemySightboxCollider;
-	private NavigationAgent2D navigationAgent;
-	private Area2D enemyKillbox;
+	protected AnimatedSprite2D sprite;
+	protected CollisionShape2D enemyCollider;
+	protected Area2D enemySightbox;
+	protected CollisionShape2D enemySightboxCollider;
+	protected NavigationAgent2D navigationAgent;
+	protected Area2D enemyKillbox;
 
 	private bool allowProcess;
 
@@ -52,8 +52,9 @@ public partial class Enemy : CharacterBody2D
         Vector2 nextPosition = navigationAgent.GetNextPathPosition();
 		
 		var agentVelocity = Position.DirectionTo(nextPosition) * currentSpeed;
+		Velocity = agentVelocity / (float)delta;
 
-		MoveAndCollide(agentVelocity);
+		MoveAndSlide();
 	}
 
     public override void _Process(double delta)

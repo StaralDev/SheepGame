@@ -24,5 +24,33 @@ namespace SheepGame
             return null;
         }
 
+        public static Node InstantiateScene(PackedScene packedScene)
+        {
+            var newScene = packedScene.Instantiate<Node>();
+            return newScene;
+        }
+
+        public static Node InstantiateScene(string scenePath)
+        {
+            return InstantiateScene(GD.Load<PackedScene>(scenePath));
+        }
+
+        public static Global GetGlobal(SceneTree sceneTree)
+        {
+            return sceneTree.Root.GetNode<Global>("/root/Global");
+        }
+
+        public static void ChangeScene(PackedScene newScene, SceneTree sceneTree)
+        {
+            var myGlobal = GetGlobal(sceneTree);
+            myGlobal.SetScene(newScene);
+        }
+
+        public static void ChangeScene(string scenePath, SceneTree sceneTree)
+        {
+            var myGlobal = GetGlobal(sceneTree);
+            myGlobal.SetScene(GD.Load<PackedScene>(scenePath));
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dov5ysi8pmn0q"]
+[gd_scene load_steps=7 format=3 uid="uid://dov5ysi8pmn0q"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_4t625"]
 [ext_resource type="Texture2D" uid="uid://dynssvcqaavb7" path="res://Sprites/testenemy.png" id="1_vlg65"]
@@ -12,10 +12,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tc4v0"]
-radius = 81.78
+[sub_resource type="CircleShape2D" id="CircleShape2D_81puo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l3bwi"]
+radius = 80.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n6o6"]
 size = Vector2(66, 426)
@@ -27,9 +34,16 @@ script = ExtResource("1_4t625")
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6bfog")
 
+[node name="EnemyKillbox" type="Area2D" parent="."]
+
+[node name="EnemyKillboxCollider" type="CollisionShape2D" parent="EnemyKillbox"]
+scale = Vector2(12, 12)
+shape = SubResource("CircleShape2D_81puo")
+debug_color = Color(1, 0.0118072, 0.01923, 0.42)
+
 [node name="EnemyCollider" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tc4v0")
-debug_color = Color(0, 0.784034, 0.411636, 0.42)
+shape = SubResource("CircleShape2D_l3bwi")
+debug_color = Color(0.461523, 1, 0.645306, 0.42)
 
 [node name="EnemySightbox" type="Area2D" parent="."]
 
@@ -39,4 +53,5 @@ shape = SubResource("RectangleShape2D_2n6o6")
 debug_color = Color(0.994768, 0.941793, 0, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_postprocessing = 1
+radius = 90.0
+debug_enabled = true

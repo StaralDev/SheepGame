@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckgqi47b4c6eh"]
+[gd_scene load_steps=6 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
 [ext_resource type="Texture2D" uid="uid://cbgn6xhp2ka08" path="res://Sprites/maincharacter.png" id="1_luhv6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_laicq"]
 size = Vector2(58.2609, 59.1304)
@@ -15,6 +17,13 @@ script = ExtResource("1_40s08")
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_luhv6")
+
+[node name="SheepHitbox" type="Area2D" parent="."]
+
+[node name="SheepHitboxCollider" type="CollisionShape2D" parent="SheepHitbox"]
+scale = Vector2(9.5, 9.5)
+shape = SubResource("CircleShape2D_7gglk")
+debug_color = Color(5.43877e-06, 0.811091, 0.325465, 0.42)
 
 [node name="SheepCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-3.8147e-06, 1)

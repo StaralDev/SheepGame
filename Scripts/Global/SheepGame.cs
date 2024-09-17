@@ -24,5 +24,26 @@ namespace SheepGame
             return null;
         }
 
+        public static T InstantiateScene<T>(PackedScene packedScene)
+        {
+            var newScene = packedScene.Instantiate<Godot.Node>();
+            return (T)Convert.ChangeType(newScene, typeof(T));
+        }
+
+        public static T InstantiateScene<T>(string scenePath)
+        {
+            return InstantiateScene<T>(GD.Load<PackedScene>(scenePath));
+        }
+
+        public static void ChangeScene()
+        {
+            
+        }
+
+        private static void changeSceneDefered()
+        {
+
+        }
+
     }
 }

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dov5ysi8pmn0q"]
+[gd_scene load_steps=8 format=3 uid="uid://dov5ysi8pmn0q"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_4t625"]
 [ext_resource type="Texture2D" uid="uid://dynssvcqaavb7" path="res://Sprites/testenemy.png" id="1_vlg65"]
+[ext_resource type="Texture2D" uid="uid://cr8un8h2flj32" path="res://Sprites/Misc/LightCone.png" id="3_1vjeu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bfog"]
 animations = [{
@@ -46,6 +47,14 @@ debug_color = Color(0.461523, 1, 0.645306, 0.42)
 position = Vector2(0, 213)
 shape = SubResource("RectangleShape2D_2n6o6")
 debug_color = Color(0.994768, 0.941793, 0, 0.42)
+
+[node name="LightCone" type="Sprite2D" parent="EnemySightbox/EnemySightboxCollider"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(0, 23)
+rotation = -1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("3_1vjeu")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 90.0

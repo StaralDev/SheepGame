@@ -74,6 +74,9 @@ public partial class Clown : Enemy
 
     public override void _Ready()
     {
+		Tween beginninglightConeTween = GetTree().CreateTween();
+		beginninglightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+
 		MapSize = new Vector2(4400, 3500);
 		MapCenter = Vector2.Zero;
 
@@ -98,6 +101,10 @@ public partial class Clown : Enemy
 				else
 				{
 					searching = true;
+					//Tween lightConeTween = GetTree().CreateTween();
+					//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+
+					currentSpeed = SearchSpeed;
 					var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
 					Position = newSpawnPoint.Position;
 					navigationAgent.TargetPosition = new Vector2(
@@ -120,6 +127,18 @@ public partial class Clown : Enemy
 		};
 
 		enemyLostTimer.Timeout += () => {
+			navigationAgent.TargetPosition = new Vector2(
+				(GD.Randi()%MapSize.X) + MapCenter.X,
+				(GD.Randi()%MapSize.Y) + MapCenter.Y
+			);
+			searching = !lost;
+
+			if (searching)
+			{
+				//Tween lightConeTween = GetTree().CreateTween();
+				//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+			}
+
 			lost = false;
 		};
     }
@@ -140,7 +159,26 @@ public partial class Clown : Enemy
 				lastDirection = lockDirection(Position.DirectionTo(nextPosition));
 
 				enemySightboxCollider.Position = lastDirection * 213;
-				enemySightboxCollider.Rotation = Mathf.DegToRad(90f - (lastDirection.Y * 90f));
+				if (lastDirection.X == 1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(-90f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.X == -1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(90f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.Y == 1) 
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(0f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.Y == -1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(180f);
+					sprite.MoveToFront();
+				}
 			}
 			else
 			{

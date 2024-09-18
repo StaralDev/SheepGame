@@ -1,6 +1,7 @@
 using Godot;
 using SheepGame;
 using System;
+using System.Runtime.Serialization;
 
 public partial class Enemy : CharacterBody2D
 {
@@ -28,12 +29,13 @@ public partial class Enemy : CharacterBody2D
 	protected bool lostSinceSeenLast = true;
 	protected Global globalObject;
 	protected Timer newPathTimer;
+	protected Sprite2D lightCone;
 
 	protected bool lost = false;
 
 	private bool allowProcess;
 
-	private float currentSpeed;
+	protected float currentSpeed;
 
     public override void _Ready()
     {
@@ -48,6 +50,7 @@ public partial class Enemy : CharacterBody2D
 		enemySightline = GetNode<RayCast2D>("EnemySightline");
 		enemyLostTimer = GetNode<Timer>("EnemyLostTimer");
 		newPathTimer = GetNode<Timer>("NewPathTimer");
+		lightCone = enemySightboxCollider.GetNode<Sprite2D>("LightCone");
 
 		globalObject = Overworld.GetGlobal(GetTree());
 
@@ -56,6 +59,15 @@ public partial class Enemy : CharacterBody2D
 		sparky ??= Overworld.GetSparky(GetTree());
 
 		enemySightline.AddException(sparky);
+
+		enemySightbox.AreaEntered += (area) => {
+			if (area.GetParent() == sparky && area.Name == "SheepHitbox")
+			{
+				searching = false;
+				//Tween lightConeTween = GetTree().CreateTween();
+				//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0f), 0.5);
+			}
+		};
 	}
 
     public override void _PhysicsProcess(double delta)

@@ -97,6 +97,7 @@ public partial class Clown : Enemy
 				}
 				else
 				{
+					searching = true;
 					var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
 					Position = newSpawnPoint.Position;
 					navigationAgent.TargetPosition = new Vector2(
@@ -133,7 +134,7 @@ public partial class Clown : Enemy
 		{
 			Vector2 nextPosition = navigationAgent.GetNextPathPosition();
 
-			if ((nextPosition-Position).Length() > 10 && (Position-navigationAgent.TargetPosition).Length() < focusDistance)
+			if ((nextPosition-Position).Length() > 10) //&& (Position-navigationAgent.TargetPosition).Length() < focusDistance
 			{
 				resting = false;
 				lastDirection = lockDirection(Position.DirectionTo(nextPosition));

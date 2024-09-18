@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckgqi47b4c6eh"]
+[gd_scene load_steps=6 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
 [ext_resource type="Texture2D" uid="uid://cbgn6xhp2ka08" path="res://Sprites/maincharacter.png" id="1_luhv6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7arvr"]
-radius = 27.4465
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8ubf"]
-radius = 65.0
-height = 150.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laicq"]
+size = Vector2(58.2609, 59.1304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gub5"]
+size = Vector2(86, 135)
 
 [node name="Sparky" type="CharacterBody2D"]
 script = ExtResource("1_40s08")
@@ -17,18 +18,25 @@ script = ExtResource("1_40s08")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_luhv6")
 
+[node name="SheepHitbox" type="Area2D" parent="."]
+
+[node name="SheepHitboxCollider" type="CollisionShape2D" parent="SheepHitbox"]
+scale = Vector2(9.5, 9.5)
+shape = SubResource("CircleShape2D_7gglk")
+debug_color = Color(5.43877e-06, 0.811091, 0.325465, 0.42)
+
 [node name="SheepCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-3.8147e-06, 1)
 scale = Vector2(2.3, 2.3)
-shape = SubResource("CircleShape2D_7arvr")
+shape = SubResource("RectangleShape2D_laicq")
 
 [node name="SheepTouchbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SheepTouchbox"]
-position = Vector2(-3, 2)
-shape = SubResource("CapsuleShape2D_k8ubf")
+position = Vector2(0, 67)
+shape = SubResource("RectangleShape2D_8gub5")
 debug_color = Color(1, 0.00940566, 0.0359491, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]

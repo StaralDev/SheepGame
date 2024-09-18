@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 namespace SheepGame
@@ -57,6 +58,25 @@ namespace SheepGame
         {
             var myGlobal = GetGlobal(sceneTree);
             myGlobal.SetScene(GD.Load<PackedScene>(scenePath));
+        }
+
+        public static EnemySpawnPoint[] GetEnemySpawnPoints(Node scene)
+        {
+            List<EnemySpawnPoint> list = new();
+            foreach (Node node in scene.GetChildren(true))
+            {
+                if (node.GetType() == typeof(EnemySpawnPoint))
+                {
+                    list.Add(node as EnemySpawnPoint);
+                }
+            }
+
+            return list.ToArray();
+        }
+
+        public static EnemySpawnPoint GetRandomEnemySpawnPoint(EnemySpawnPoint[] spawnPoints)
+        {
+            return spawnPoints[GD.Randi()%(spawnPoints.Length-1)];
         }
 
     }

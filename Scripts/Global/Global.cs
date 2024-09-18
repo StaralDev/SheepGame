@@ -32,7 +32,7 @@ public partial class Global : Godot.Node
 
     public override void _Ready()
     {
-        
+        GD.Randomize();
     }
 
     public override void _Process(double delta)

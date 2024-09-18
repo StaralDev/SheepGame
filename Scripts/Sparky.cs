@@ -31,6 +31,8 @@ public partial class Sparky : CharacterBody2D
 		return lastDirection;
 	}
 
+	
+
     public override void _Ready()
     {
 		sprite = GetNode<Sprite2D>("Sprite");

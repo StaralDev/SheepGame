@@ -5,6 +5,16 @@ using System;
 public partial class Global : Godot.Node
 {
 
+    public struct PlayerData {
+        public int Health;
+        public Balloons? currentBalloon;
+    }
+
+    public PlayerData myData = new PlayerData{
+        Health = 3,
+        currentBalloon = null,
+    };
+
     public void SetScene(PackedScene packedScene)
     {
         CallDeferred(MethodName.setSceneDefered, packedScene);

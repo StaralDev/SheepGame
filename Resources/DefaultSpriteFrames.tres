@@ -1,10 +1,27 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://pyy57teew5vj"]
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://pyy57teew5vj"]
 
 [ext_resource type="Texture2D" uid="uid://6xu4grw28a8x" path="res://Sprites/Clowns/RedClownBad.png" id="1_ijxsd"]
+[ext_resource type="Texture2D" uid="uid://bt6cyoxjpo4wx" path="res://Sprites/Clowns/RedClownNice.png" id="1_p4iec"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbqpq"]
 atlas = ExtResource("1_ijxsd")
 region = Rect2(0, 0, 25, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4h5g"]
+atlas = ExtResource("1_ijxsd")
+region = Rect2(0, 76, 23, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnfxi"]
+atlas = ExtResource("1_ijxsd")
+region = Rect2(73, 114, 23, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxyob"]
+atlas = ExtResource("1_p4iec")
+region = Rect2(0, 0, 26, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hvqg"]
+atlas = ExtResource("1_p4iec")
+region = Rect2(26, 0, 26, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua2im"]
 atlas = ExtResource("1_ijxsd")
@@ -18,10 +35,6 @@ region = Rect2(50, 0, 25, 38)
 atlas = ExtResource("1_ijxsd")
 region = Rect2(75, 0, 25, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d4h5g"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(0, 76, 23, 38)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0otm"]
 atlas = ExtResource("1_ijxsd")
 region = Rect2(23, 76, 23, 38)
@@ -33,10 +46,6 @@ region = Rect2(46, 76, 23, 38)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wm7b8"]
 atlas = ExtResource("1_ijxsd")
 region = Rect2(69, 76, 23, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnfxi"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(73, 114, 23, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4q5d"]
 atlas = ExtResource("1_ijxsd")
@@ -68,7 +77,27 @@ region = Rect2(75, 38, 25, 38)
 
 [resource]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_mbqpq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_d4h5g")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_jnfxi")
+}],
+"loop": true,
+"name": &"LostAnimation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxyob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hvqg")
+}],
 "loop": true,
 "name": &"Pacified",
 "speed": 5.0

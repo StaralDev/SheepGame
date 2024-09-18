@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqgbfc6floqh"]
+
+[ext_resource type="Texture2D" uid="uid://24v4t0eob38s" path="res://Sprites/spawn.png" id="1_cuejb"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPoint.cs" id="2_86gtf"]
+
+[node name="EnemySpawnPoint" type="Sprite2D"]
+texture = ExtResource("1_cuejb")
+script = ExtResource("2_86gtf")

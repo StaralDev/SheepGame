@@ -14,6 +14,11 @@ public partial class Sparky : CharacterBody2D
 	private CollisionShape2D sheepTouchboxCollider;
 	private Camera2D camera;
 
+	public bool HasRedBalloon = false;
+	public bool HasBlueBalloon = false;
+	public bool HasGreenBalloon = false;
+	public bool HasYellowBalloon = false;
+
 	private Vector2 lockDirection(Vector2 dir)
 	{
 		if ((dir.X == 0 || dir.Y == 0) && !(dir.X == 0 && dir.Y == 0))

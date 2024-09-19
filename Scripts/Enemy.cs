@@ -5,18 +5,28 @@ using System.Runtime.Serialization;
 
 public partial class Enemy : CharacterBody2D
 {
-	public const float SearchSpeed = 2f;
-	public const float WalkSpeed = 3f;
-	public const float RunSpeed = 4.5f;
-	public const float focusDistance = 1000f;
+	[Export]
+	public float SearchSpeed { get; set; } = 2f;
+	[Export]
+	public float WalkSpeed { get; set; } = 3f;
+	[Export]
+	public float RunSpeed { get; set; } = 4.5f;
+	[Export]
+	public float focusDistance { get; set; } = 1000f;
 
 	public Vector2 MapSize;
 	public Vector2 MapCenter;
+
+	[Export]
+	public string ColorName { get; set; } = "Red";
 
 	public bool PathfindingEnable = true;
 
 	protected Sparky sparky;
 	protected bool searching = true;
+
+	protected float transparancyAmount = 0f;
+	protected int transparencyDirection = 1;
 
 	protected AnimatedSprite2D sprite;
 	protected CollisionShape2D enemyCollider;
@@ -64,8 +74,7 @@ public partial class Enemy : CharacterBody2D
 			if (area.GetParent() == sparky && area.Name == "SheepHitbox")
 			{
 				searching = false;
-				//Tween lightConeTween = GetTree().CreateTween();
-				//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0f), 0.5);
+				transparencyDirection = -1;
 			}
 		};
 	}
@@ -102,6 +111,7 @@ public partial class Enemy : CharacterBody2D
 					lost = false;
 					lostSinceSeenLast = false;
 					navigationAgent.TargetPosition = sparky.Position;
+					sparky.Persue(ColorName, true);
 					currentSpeed = WalkSpeed;
 					sprite.SpeedScale = 1;
 				}
@@ -109,6 +119,7 @@ public partial class Enemy : CharacterBody2D
 				{
 					currentSpeed = RunSpeed;
 					sprite.SpeedScale = 1.5f;
+					sparky.Persue(ColorName, false);
 				}
 			}
 

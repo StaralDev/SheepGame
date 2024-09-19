@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rplr16gr7xp"
-path="res://.godot/imported/GreenClownNice.png-16f70428bfa86b944cbcd3a7bd9f54b3.ctex"
+uid="uid://cs3wuhpit4mxl"
+path="res://.godot/imported/BlueClownNice.png-c8d5d369b7647732860fbfefd6e3c2de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/GreenClownNice.png"
-dest_files=["res://.godot/imported/GreenClownNice.png-16f70428bfa86b944cbcd3a7bd9f54b3.ctex"]
+source_file="res://Sprites/Clowns/BlueClownNice.png"
+dest_files=["res://.godot/imported/BlueClownNice.png-c8d5d369b7647732860fbfefd6e3c2de.ctex"]
 
 [params]
 

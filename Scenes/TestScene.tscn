@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://cixi1q8mhkjt4"]
+[gd_scene load_steps=11 format=4 uid="uid://cixi1q8mhkjt4"]
 
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
 [ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/icon.svg" id="2_c24ag"]
-[ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="4_hi7pb"]
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="4_l4c8n"]
 [ext_resource type="PackedScene" uid="uid://btqgbfc6floqh" path="res://Replicatables/EnemySpawnPoint.tscn" id="5_fuh1h"]
+[ext_resource type="PackedScene" uid="uid://bqsp4r3jlvm6o" path="res://Replicatables/Clowns/RedClown.tscn" id="5_g7s1o"]
+[ext_resource type="PackedScene" uid="uid://doo04c6b7innn" path="res://Replicatables/Clowns/YellowClown.tscn" id="6_n61xj"]
+[ext_resource type="PackedScene" uid="uid://dkfx05ycrae4a" path="res://Replicatables/Clowns/BlueClown.tscn" id="7_kmvdv"]
+[ext_resource type="PackedScene" uid="uid://uc8ct1kp7po3" path="res://Replicatables/Clowns/GreenClown.tscn" id="8_n5s6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
 size = Vector2(128, 128)
@@ -37,9 +40,6 @@ navigation_polygon = SubResource("NavigationPolygon_kg8hg")
 tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD4//3/AAAAAAAAAAD4//z/AAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAALAAIAAAAAAAAAAAALAAEAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("4_l4c8n")
 
-[node name="Clown" parent="." instance=ExtResource("4_hi7pb")]
-position = Vector2(-625, 3)
-
 [node name="EnemySpawnPoint" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1082, 825)
 
@@ -48,3 +48,15 @@ position = Vector2(1782, -179)
 
 [node name="EnemySpawnPoint3" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1236, -643)
+
+[node name="Clown" parent="." instance=ExtResource("5_g7s1o")]
+position = Vector2(-1177, 478)
+
+[node name="Clown2" parent="." instance=ExtResource("6_n61xj")]
+position = Vector2(1164, 331)
+
+[node name="Clown3" parent="." instance=ExtResource("7_kmvdv")]
+position = Vector2(-151, 1196)
+
+[node name="Clown4" parent="." instance=ExtResource("8_n5s6w")]
+position = Vector2(-431, -777)

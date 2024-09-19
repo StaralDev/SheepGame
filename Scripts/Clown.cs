@@ -5,9 +5,10 @@ using SheepGame;
 public partial class Clown : Enemy
 {
 	[Export]
-	public SpriteFrames spriteFrames;
+	public SpriteFrames spriteFrames { get; set; }
 
-	public bool Pacified = false;
+	[Export]
+	public bool Pacified { get; set; } = false;
 
 	private Vector2 lastDirection;
 	private string animation = "WalkUp";
@@ -74,8 +75,7 @@ public partial class Clown : Enemy
 
     public override void _Ready()
     {
-		Tween beginninglightConeTween = GetTree().CreateTween();
-		beginninglightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+		transparencyDirection = 1;
 
 		MapSize = new Vector2(4400, 3500);
 		MapCenter = Vector2.Zero;
@@ -101,8 +101,7 @@ public partial class Clown : Enemy
 				else
 				{
 					searching = true;
-					//Tween lightConeTween = GetTree().CreateTween();
-					//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+					transparencyDirection = 1;
 
 					currentSpeed = SearchSpeed;
 					var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
@@ -131,12 +130,11 @@ public partial class Clown : Enemy
 				(GD.Randi()%MapSize.X) + MapCenter.X,
 				(GD.Randi()%MapSize.Y) + MapCenter.Y
 			);
-			searching = !lost;
+			searching = lost;
 
 			if (searching)
 			{
-				//Tween lightConeTween = GetTree().CreateTween();
-				//lightConeTween.TweenProperty(lightCone, "modulate", new Godot.Color(Colors.LightYellow, 0.5f), 0.5);
+				transparencyDirection = 1;
 			}
 
 			lost = false;
@@ -149,7 +147,7 @@ public partial class Clown : Enemy
 
 		PathfindingEnable = !Pacified;
 
-		if (PathfindingEnable)
+		if (PathfindingEnable && navigationAgent != null)
 		{
 			Vector2 nextPosition = navigationAgent.GetNextPathPosition();
 
@@ -187,6 +185,9 @@ public partial class Clown : Enemy
 				{
 					lostSinceSeenLast = true;
 					lost = true;
+					navigationAgent.TargetPosition = Position;
+					searching = true;
+					currentSpeed = SearchSpeed;
 					enemyLostTimer.Start();
 					sprite.SpeedScale = 1f;
 					sprite.Frame = 0;
@@ -216,5 +217,13 @@ public partial class Clown : Enemy
 				sprite.SpeedScale = 1f;
 			}
 		}
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+
+		transparancyAmount = Mathf.Clamp(transparancyAmount + (transparencyDirection * (float)delta * 4), 0, 1);
+		lightCone.Modulate = new Color(Colors.LightYellow, transparancyAmount/2);
     }
 }

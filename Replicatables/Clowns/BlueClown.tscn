@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkfx05ycrae4a"]
+
+[ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="1_bjryv"]
+[ext_resource type="SpriteFrames" uid="uid://oc7euib55i3o" path="res://Resources/BlueClownSpriteFrames.tres" id="2_5wgcq"]
+
+[node name="BlueClown" instance=ExtResource("1_bjryv")]
+spriteFrames = ExtResource("2_5wgcq")
+Pacified = false
+ColorName = "Blue"
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_5wgcq")
+frame_progress = 0.0

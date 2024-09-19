@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://uc8ct1kp7po3"]
+
+[ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="1_euj47"]
+[ext_resource type="SpriteFrames" uid="uid://c1ajj78kd7meu" path="res://Resources/GreenClownSpriteFrames.tres" id="2_7ad85"]
+
+[node name="GreenClown" instance=ExtResource("1_euj47")]
+spriteFrames = ExtResource("2_7ad85")
+Pacified = false
+ColorName = "Green"
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_7ad85")
+animation = &"LostAnimation"
+frame_progress = 0.222055

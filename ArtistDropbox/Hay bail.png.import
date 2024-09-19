@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tnbyk65gtsna"
-path="res://.godot/imported/YellowClownBad.png-728c2c945bf07fb9ed720faa192dfb52.ctex"
+uid="uid://cws3pu6w2hsux"
+path="res://.godot/imported/Hay bail.png-f349543abf15743d21a4bb01f7f80a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/YellowClownBad.png"
-dest_files=["res://.godot/imported/YellowClownBad.png-728c2c945bf07fb9ed720faa192dfb52.ctex"]
+source_file="res://ArtistDropbox/Hay bail.png"
+dest_files=["res://.godot/imported/Hay bail.png-f349543abf15743d21a4bb01f7f80a40.ctex"]
 
 [params]
 

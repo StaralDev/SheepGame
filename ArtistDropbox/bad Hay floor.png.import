@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tnbyk65gtsna"
-path="res://.godot/imported/YellowClownBad.png-728c2c945bf07fb9ed720faa192dfb52.ctex"
+uid="uid://b52asgfmwedm1"
+path="res://.godot/imported/bad Hay floor.png-35cfc15dab5a22a6cb0aca4b6010c0c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/YellowClownBad.png"
-dest_files=["res://.godot/imported/YellowClownBad.png-728c2c945bf07fb9ed720faa192dfb52.ctex"]
+source_file="res://ArtistDropbox/bad Hay floor.png"
+dest_files=["res://.godot/imported/bad Hay floor.png-35cfc15dab5a22a6cb0aca4b6010c0c4.ctex"]
 
 [params]
 

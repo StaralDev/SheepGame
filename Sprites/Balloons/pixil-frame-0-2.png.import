@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpdvpbku60qwg"
-path="res://.godot/imported/green Boloon File.png-f4ad35a09b9bb7f5969e2e18dc48ebc8.ctex"
+uid="uid://komn15jedyjk"
+path="res://.godot/imported/pixil-frame-0-2.png-e2a1bc9829e4c5a54f6c614d9a4ea8ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/green Boloon File.png"
-dest_files=["res://.godot/imported/green Boloon File.png-f4ad35a09b9bb7f5969e2e18dc48ebc8.ctex"]
+source_file="res://Sprites/Balloons/pixil-frame-0-2.png"
+dest_files=["res://.godot/imported/pixil-frame-0-2.png-e2a1bc9829e4c5a54f6c614d9a4ea8ce.ctex"]
 
 [params]
 

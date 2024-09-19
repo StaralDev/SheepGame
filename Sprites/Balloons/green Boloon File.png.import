@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dynssvcqaavb7"
-path="res://.godot/imported/testenemy.png-a4534e6d12a379999c3e22c8199bece9.ctex"
+uid="uid://cpdvpbku60qwg"
+path="res://.godot/imported/green Boloon File.png-2b7ee57eebae3b8ecbb92807080ee5d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/testenemy.png"
-dest_files=["res://.godot/imported/testenemy.png-a4534e6d12a379999c3e22c8199bece9.ctex"]
+source_file="res://Sprites/Balloons/green Boloon File.png"
+dest_files=["res://.godot/imported/green Boloon File.png-2b7ee57eebae3b8ecbb92807080ee5d5.ctex"]
 
 [params]
 

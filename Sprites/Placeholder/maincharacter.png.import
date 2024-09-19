@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3vd3blag6y7o"
-path="res://.godot/imported/SparkySpriteSheet.png-04aec7999cf9698251903cc5ce38e6f4.ctex"
+uid="uid://cbgn6xhp2ka08"
+path="res://.godot/imported/maincharacter.png-66b8a6cdf3f120c05ce46b7cc314e44b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/SparkySpriteSheet.png"
-dest_files=["res://.godot/imported/SparkySpriteSheet.png-04aec7999cf9698251903cc5ce38e6f4.ctex"]
+source_file="res://Sprites/Placeholder/maincharacter.png"
+dest_files=["res://.godot/imported/maincharacter.png-66b8a6cdf3f120c05ce46b7cc314e44b.ctex"]
 
 [params]
 

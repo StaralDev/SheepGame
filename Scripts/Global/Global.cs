@@ -1,9 +1,18 @@
 using Godot;
 using SheepGame;
 using System;
+using System.Collections.Generic;
 
 public partial class Global : Godot.Node
 {
+
+    public struct Bilboard {
+        public Node node;
+        public float overlapOffset;
+    }
+
+    private List<Bilboard> Bilboards = new();
+    private Bilboard[] bilboardArray;
 
     public struct PlayerData {
         public int Health;
@@ -14,6 +23,11 @@ public partial class Global : Godot.Node
         Health = 3,
         currentBalloon = null,
     };
+
+    public void CreateBilboard()
+    {
+        
+    }
 
     public void SetScene(PackedScene packedScene)
     {

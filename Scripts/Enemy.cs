@@ -176,3 +176,6 @@ public partial class Enemy : CharacterBody2D
 		timeout();
 	}
 }
+
+
+//hi

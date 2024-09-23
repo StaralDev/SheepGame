@@ -1,43 +1,53 @@
 using Godot;
-using SheepGame;
 using System;
 
 public partial class Interaction : Area2D
 {
-	// Define what type this is. either balloon or Game
-	public string self;
-	public string selfName;
+	[Export]
+	public bool EnableInteraction { get; set; } = true;
 
-	public Sparky sparky;
+	protected bool SparkyInArea = false;
+	#nullable enable
+	protected Sparky? sparky;
+	#nullable disable
 
-	// Called when the node enters the scene tree for the first time.
+	protected bool EnableInteractionInternal = true;
+
+	public virtual void _OnInteraction() {}
+
+	private void updateSparkyInArea(Area2D area, bool enable)
+	{
+		Node parent = area.GetParent();
+		if (parent.GetType() == typeof(Sparky))
+		{
+			if (enable) {
+				sparky = parent as Sparky;
+			}
+			else
+			{
+				sparky = null;
+			}
+
+			SparkyInArea = enable;
+		}
+	}
+
 	public override void _Ready()
 	{
-		this.Visible = false;
-		sparky = GetTree().CurrentScene.GetNode<Sparky>("Sparky");
-		GD.Print(sparky);
-	}
+		AreaEntered += (area) => {
+			updateSparkyInArea(area, true);
+		};
 
-	public void _on_area_entered(Area2D area)
-	{
-		this.Visible = true;
-	}
-
-	public void _on_area_exited(Area2D area)
-	{
-		this.Visible = false;
+		AreaExited += (area) => {
+			updateSparkyInArea(area, false);
+		};
 	}
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionPressed("Interact") && this.Visible == true)
+        if (EnableInteraction && EnableInteractionInternal && SparkyInArea && sparky != null && Input.IsActionJustReleased("sg_interact"))
 		{
-			GD.Print(this.GetParent());
-			if (self == "balloon");
-			{
-				//sparky.HasGreenBalloon;
-				QueueFree();
-			}
+			_OnInteraction();
 		}
     }
 }

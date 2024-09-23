@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7b44jm3vja3k"
-path="res://.godot/imported/pixil-frame-0.png-3e412dba51ea998c220150496c6c6354.ctex"
+uid="uid://1rplr16gr7xp"
+path="res://.godot/imported/GreenClownNice.png-a33d9b84b279148ce86842b2a8c786af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-3e412dba51ea998c220150496c6c6354.ctex"]
+source_file="res://Sprites/Clowns/GreenClownNice.png"
+dest_files=["res://.godot/imported/GreenClownNice.png-a33d9b84b279148ce86842b2a8c786af.ctex"]
 
 [params]
 

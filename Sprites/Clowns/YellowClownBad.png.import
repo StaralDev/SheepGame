@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbgn6xhp2ka08"
-path="res://.godot/imported/maincharacter.png-765bbe7ef6bf62ab60da7b91318842a5.ctex"
+uid="uid://dddnbj5x01sk6"
+path="res://.godot/imported/YellowClownBad.png-8faa48728bf9bc16a9a174a343caedf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/maincharacter.png"
-dest_files=["res://.godot/imported/maincharacter.png-765bbe7ef6bf62ab60da7b91318842a5.ctex"]
+source_file="res://Sprites/Clowns/YellowClownBad.png"
+dest_files=["res://.godot/imported/YellowClownBad.png-8faa48728bf9bc16a9a174a343caedf1.ctex"]
 
 [params]
 

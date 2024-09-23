@@ -5,9 +5,10 @@ using SheepGame;
 public partial class Clown : Enemy
 {
 	[Export]
-	public SpriteFrames spriteFrames;
+	public SpriteFrames spriteFrames { get; set; }
 
-	public bool Pacified = false;
+	[Export]
+	public bool Pacified { get; set; } = false;
 
 	private Vector2 lastDirection;
 	private string animation = "WalkUp";
@@ -72,12 +73,24 @@ public partial class Clown : Enemy
 		}
 	}
 
+	private void disableCollision()
+	{
+		enemyCollider.Disabled = true;
+	}
+
     public override void _Ready()
     {
+		transparencyDirection = 1;
+
 		MapSize = new Vector2(4400, 3500);
 		MapCenter = Vector2.Zero;
 
         base._Ready();
+
+		sawSparkyTimer.Timeout += () => {
+			ExclamationPoint.Visible = false;
+		};
+
 		spawnPoints = Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 		lastDirection = new Vector2(0, 1);
 
@@ -85,41 +98,62 @@ public partial class Clown : Enemy
 
 		sprite.Animation = animation;
 
+		globalObject.CreateBilboard(this, 8);
+
 		enemyKillbox.AreaEntered += (myArea) => {
 			if (Pacified) { return; }
 			Node parent = myArea.GetParent();
 			if (myArea.Name == "SheepHitbox" && parent.GetType() == typeof(Sparky))
 			{
-				globalObject.myData.Health -= 1;
-				if (globalObject.myData.Health <= 0)
+				if (globalObject.myData.currentBalloon.ToString() == ColorName)
 				{
-					Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());
+					Pacified = true;
+					globalObject.myData.currentBalloon = null;
+					
+					sparky.Persue(ColorName, false);
+
+					CallDeferred(MethodName.disableCollision);					
 				}
 				else
 				{
-					searching = true;
-					var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
-					Position = newSpawnPoint.Position;
-					navigationAgent.TargetPosition = new Vector2(
-						(GD.Randi()%MapSize.X) + MapCenter.X,
-						(GD.Randi()%MapSize.Y) + MapCenter.Y
-					);
-					/*Vector2 chosenPosition = Vector2.Zero;
-					while (chosenPosition == Vector2.Zero || (chosenPosition-sparky.Position).Length() <= focusDistance)
+					JumpscareGui jumpscareGui = Overworld.InstantiateScene("res://Replicatables/Gui/JumpscareGui.tscn") as JumpscareGui;
+					jumpscareGui.Speed = 0.2f;
+					AddChild(jumpscareGui);
+
+					globalObject.myData.Health -= 1;
+					if (globalObject.myData.Health <= 0)
 					{
-						chosenPosition = new Vector2(
-							(GD.Randi()%MapSize.X) + MapCenter.X,
-							(GD.Randi()%MapSize.Y) + MapCenter.Y
+						Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());
+					}
+					else
+					{
+						searching = true;
+						transparencyDirection = 1;
+
+						currentSpeed = SearchSpeed;
+						var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
+						Position = newSpawnPoint.Position;
+						navigationAgent.TargetPosition = new Vector2(
+							(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
+							(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
 						);
 					}
-
-					Position = chosenPosition;
-					*/
 				}
 			}
 		};
 
 		enemyLostTimer.Timeout += () => {
+			navigationAgent.TargetPosition = new Vector2(
+				(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
+				(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
+			);
+			searching = lost;
+
+			if (searching)
+			{
+				transparencyDirection = -1;
+			}
+
 			lost = false;
 		};
     }
@@ -130,7 +164,7 @@ public partial class Clown : Enemy
 
 		PathfindingEnable = !Pacified;
 
-		if (PathfindingEnable)
+		if (PathfindingEnable && navigationAgent != null)
 		{
 			Vector2 nextPosition = navigationAgent.GetNextPathPosition();
 
@@ -140,7 +174,26 @@ public partial class Clown : Enemy
 				lastDirection = lockDirection(Position.DirectionTo(nextPosition));
 
 				enemySightboxCollider.Position = lastDirection * 213;
-				enemySightboxCollider.Rotation = Mathf.DegToRad(90f - (lastDirection.Y * 90f));
+				if (lastDirection.X == 1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(-90f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.X == -1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(90f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.Y == 1) 
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(0f);
+					enemySightbox.MoveToFront();
+				}
+				else if (lastDirection.Y == -1)
+				{
+					enemySightboxCollider.Rotation = Mathf.DegToRad(180f);
+					sprite.MoveToFront();
+				}
 			}
 			else
 			{
@@ -149,6 +202,9 @@ public partial class Clown : Enemy
 				{
 					lostSinceSeenLast = true;
 					lost = true;
+					navigationAgent.TargetPosition = Position;
+					searching = true;
+					currentSpeed = SearchSpeed;
 					enemyLostTimer.Start();
 					sprite.SpeedScale = 1f;
 					sprite.Frame = 0;
@@ -162,21 +218,38 @@ public partial class Clown : Enemy
 
 		bool spritePlaying = sprite.IsPlaying();
 
-		if (!lost) {
-			if (Pacified && !spritePlaying)
+		if (Pacified)
+		{
+			sprite.SpeedScale = 0.5f;
+			if (!spritePlaying)
 			{
 				sprite.Play();
-				sprite.SpeedScale = 0.5f;
-			} else if (spritePlaying && (lastDirection == Vector2.Zero || resting))
+			}
+		} else if (!lost) {
+			if (spritePlaying && (lastDirection == Vector2.Zero || resting))
 			{
 				sprite.Stop();
 				sprite.SpeedScale = 1f;
 				sprite.Frame = 0;
-			} else if (!spritePlaying && lastDirection != Vector2.Zero) 
+			} 
+			else if (!spritePlaying && lastDirection != Vector2.Zero) 
 			{
 				sprite.Play();
 				sprite.SpeedScale = 1f;
 			}
 		}
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+
+		if (Pacified)
+		{
+			transparencyDirection = -1;
+		}
+
+		transparancyAmount = Mathf.Clamp(transparancyAmount + (transparencyDirection * (float)delta * 4), 0, 1);
+		lightCone.Modulate = new Color(Colors.LightYellow, transparancyAmount/2);
     }
 }

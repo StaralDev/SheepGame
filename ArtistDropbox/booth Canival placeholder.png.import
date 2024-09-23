@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://komn15jedyjk"
-path="res://.godot/imported/pixil-frame-0-2.png-ecd9ad7b111c4f096ec433fcc77913d2.ctex"
+uid="uid://2v65wp0dpmeo"
+path="res://.godot/imported/booth Canival placeholder.png-8d26caffb78b366e01651f573b8c765e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/pixil-frame-0-2.png"
-dest_files=["res://.godot/imported/pixil-frame-0-2.png-ecd9ad7b111c4f096ec433fcc77913d2.ctex"]
+source_file="res://ArtistDropbox/booth Canival placeholder.png"
+dest_files=["res://.godot/imported/booth Canival placeholder.png-8d26caffb78b366e01651f573b8c765e.ctex"]
 
 [params]
 

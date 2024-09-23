@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://doo04c6b7innn"]
+
+[ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="1_5wk4b"]
+[ext_resource type="SpriteFrames" uid="uid://c1vvlgji6vsux" path="res://Resources/YellowClownSpriteFrames.tres" id="2_ccn4p"]
+
+[node name="YellowClown" instance=ExtResource("1_5wk4b")]
+spriteFrames = ExtResource("2_ccn4p")
+Pacified = false
+ColorName = "Yellow"
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_ccn4p")
+frame_progress = 0.0

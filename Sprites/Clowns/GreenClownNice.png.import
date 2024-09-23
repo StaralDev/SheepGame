@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://5623wvu7w45e"
-path="res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"
+uid="uid://1rplr16gr7xp"
+path="res://.godot/imported/GreenClownNice.png-a33d9b84b279148ce86842b2a8c786af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/OverworldAssets.png"
-dest_files=["res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"]
+source_file="res://Sprites/Clowns/GreenClownNice.png"
+dest_files=["res://.godot/imported/GreenClownNice.png-a33d9b84b279148ce86842b2a8c786af.ctex"]
 
 [params]
 

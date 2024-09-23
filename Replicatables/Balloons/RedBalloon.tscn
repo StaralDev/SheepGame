@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://vy8l5ivul6r4"]
+
+[ext_resource type="PackedScene" uid="uid://bmqrhytswi27i" path="res://Replicatables/Balloon.tscn" id="1_1gwgb"]
+
+[node name="RedBalloon" instance=ExtResource("1_1gwgb")]

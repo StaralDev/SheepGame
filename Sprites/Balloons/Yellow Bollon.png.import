@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8axjngo00ldn"
-path="res://.godot/imported/BlueClownNice.png-433373938078cf1240f11e7df6b8fc17.ctex"
+uid="uid://xkqaf0s64bab"
+path="res://.godot/imported/Yellow Bollon.png-cfe447b43b863b9164aac4bab6212ffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/BlueClownNice.png"
-dest_files=["res://.godot/imported/BlueClownNice.png-433373938078cf1240f11e7df6b8fc17.ctex"]
+source_file="res://Sprites/Balloons/Yellow Bollon.png"
+dest_files=["res://.godot/imported/Yellow Bollon.png-cfe447b43b863b9164aac4bab6212ffe.ctex"]
 
 [params]
 

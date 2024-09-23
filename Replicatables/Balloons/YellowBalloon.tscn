@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://csirvq1ao5tpa"]
+
+[ext_resource type="PackedScene" uid="uid://bmqrhytswi27i" path="res://Replicatables/Balloon.tscn" id="1_kypjk"]
+[ext_resource type="Texture2D" uid="uid://xkqaf0s64bab" path="res://Sprites/Balloons/Yellow Bollon.png" id="2_8psw1"]
+
+[node name="YellowBalloon" instance=ExtResource("1_kypjk")]
+BalloonColor = "Yellow"
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_8psw1")

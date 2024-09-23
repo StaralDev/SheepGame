@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://630tyl8yla6t"
-path="res://.godot/imported/ExclamationMark.png-0dee2c35cadd2cd8bce5b5255b1b11ef.ctex"
+uid="uid://cpdvpbku60qwg"
+path="res://.godot/imported/green Boloon File.png-2b7ee57eebae3b8ecbb92807080ee5d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/ExclamationMark.png"
-dest_files=["res://.godot/imported/ExclamationMark.png-0dee2c35cadd2cd8bce5b5255b1b11ef.ctex"]
+source_file="res://Sprites/Balloons/green Boloon File.png"
+dest_files=["res://.godot/imported/green Boloon File.png-2b7ee57eebae3b8ecbb92807080ee5d5.ctex"]
 
 [params]
 

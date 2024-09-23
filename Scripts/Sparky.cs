@@ -1,4 +1,5 @@
 using Godot;
+using SheepGame;
 using System;
 
 public partial class Sparky : CharacterBody2D
@@ -17,6 +18,8 @@ public partial class Sparky : CharacterBody2D
 	private Vector2 lastPosition;
 
 	private string animation;
+
+	private Global myGlobalObject;
 
 	public struct Persuance<T> {
 		public T Red;
@@ -151,6 +154,9 @@ public partial class Sparky : CharacterBody2D
 
         lastDirection = new Vector2(1, 0);
 		lastPosition = Vector2.Zero;
+
+		myGlobalObject = Overworld.GetGlobal(GetTree());
+		myGlobalObject.CreateBilboard(this, 0);
     }
 
     public override void _PhysicsProcess(double delta)

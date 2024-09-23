@@ -3,4 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="1_fdqw8"]
 
 [node name="RedClown" instance=ExtResource("1_fdqw8")]
-Pacified = false
+
+[node name="Sprite" parent="." index="0"]
+animation = &"WalkLeft"
+frame = 3
+frame_progress = 0.0161115

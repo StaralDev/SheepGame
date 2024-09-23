@@ -7,6 +7,7 @@
 [node name="Clown" instance=ExtResource("1_ca330")]
 script = ExtResource("2_735fd")
 spriteFrames = ExtResource("3_3d7qv")
+Pacified = false
 
 [node name="Sprite" parent="." index="0"]
 texture_filter = 1

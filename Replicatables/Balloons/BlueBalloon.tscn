@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm82rb5ladryl"]
+
+[ext_resource type="PackedScene" uid="uid://bmqrhytswi27i" path="res://Replicatables/Balloon.tscn" id="1_ujqdm"]
+[ext_resource type="Texture2D" uid="uid://komn15jedyjk" path="res://Sprites/Balloons/pixil-frame-0-2.png" id="2_nwm4f"]
+
+[node name="BlueBalloon" instance=ExtResource("1_ujqdm")]
+BalloonColor = "Blue"
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_nwm4f")

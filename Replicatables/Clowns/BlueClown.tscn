@@ -5,7 +5,6 @@
 
 [node name="BlueClown" instance=ExtResource("1_bjryv")]
 spriteFrames = ExtResource("2_5wgcq")
-Pacified = false
 ColorName = "Blue"
 
 [node name="Sprite" parent="." index="0"]

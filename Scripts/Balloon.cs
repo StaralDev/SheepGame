@@ -27,8 +27,9 @@ public partial class Balloon : Interaction
         base._Ready();
 
 		myGlobalObject = Overworld.GetGlobal(GetTree());
-
         sprite = GetNode<Sprite2D>("Sprite2D");
+
+        myGlobalObject.CreateBilboard(this, 25);
     }
 
     private Balloons getEnumFromBalloonColor(string colorString)
@@ -55,10 +56,9 @@ public partial class Balloon : Interaction
 
     public override void _OnInteraction()
     {
-        EnableInteraction = false;
-
-		if (myGlobalObject.myData.currentBalloon == null)
+        if (myGlobalObject.myData.currentBalloon == null)
 		{
+            EnableInteraction = false;
 			myGlobalObject.myData.currentBalloon = getEnumFromBalloonColor(BalloonColor);
             sprite.Visible = false;
 		}

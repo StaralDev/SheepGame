@@ -49,7 +49,7 @@ public partial class Enemy : CharacterBody2D
 
     public override void _Ready()
     {
-		currentSpeed = WalkSpeed;
+		currentSpeed = SearchSpeed;
 
         sprite = GetNode<AnimatedSprite2D>("Sprite");
 		enemyCollider = GetNode<CollisionShape2D>("EnemyCollider");
@@ -73,8 +73,13 @@ public partial class Enemy : CharacterBody2D
 		enemySightbox.AreaEntered += (area) => {
 			if (area.GetParent() == sparky && area.Name == "SheepHitbox")
 			{
-				searching = false;
-				transparencyDirection = -1;
+				bool canSeeSparky = !enemySightline.IsColliding();
+
+				if (canSeeSparky)
+				{
+					searching = false;
+					transparencyDirection = -1;
+				}
 			}
 		};
 	}
@@ -85,13 +90,21 @@ public partial class Enemy : CharacterBody2D
 
 		if (PathfindingEnable)
 		{
+			enemySightline.Position = Position;
+			enemySightline.TargetPosition = sparky.Position - Position;
+
 			if (searching) 
 			{
+				if (!lost)
+				{
+					transparencyDirection = 1;
+				}
+
 				if ((Position-navigationAgent.TargetPosition).Length() <= 10)
 				{
 					navigationAgent.TargetPosition = new Vector2(
-						(GD.Randi()%MapSize.X) + MapCenter.X,
-						(GD.Randi()%MapSize.Y) + MapCenter.Y
+						(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
+						(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
 					);
 				}
 			}
@@ -100,9 +113,6 @@ public partial class Enemy : CharacterBody2D
 				sparky ??= Overworld.GetSparky(GetTree());
 				
 				if (sparky == null) { return; }
-				
-				enemySightline.Position = Position;
-				enemySightline.TargetPosition = sparky.Position - Position;
 
 				bool canSeeSparky = !enemySightline.IsColliding();
 
@@ -144,17 +154,25 @@ public partial class Enemy : CharacterBody2D
         
     }
 
+	protected void timeout()
+	{
+		if (searching && PathfindingEnable) {
+			navigationAgent.TargetPosition = new Vector2(
+				(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
+				(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
+			);
+			newPathTimer.WaitTime = 5+(GD.Randi()%4);
+		}
+	}
+
 	public void Setup()
 	{
 		allowProcess = true;
 
 		newPathTimer.Timeout += () => {
-			if (searching && PathfindingEnable) {
-				navigationAgent.TargetPosition = new Vector2(
-					(GD.Randi()%MapSize.X) + MapCenter.X,
-					(GD.Randi()%MapSize.Y) + MapCenter.Y
-				);
-			}
+			timeout();
 		};
+
+		timeout();
 	}
 }

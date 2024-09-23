@@ -59,7 +59,6 @@ texture = ExtResource("3_1vjeu")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
 radius = 250.0
-debug_enabled = true
 
 [node name="EnemySightline" type="RayCast2D" parent="."]
 top_level = true

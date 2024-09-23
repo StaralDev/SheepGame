@@ -87,6 +87,10 @@ public partial class Clown : Enemy
 
         base._Ready();
 
+		sawSparkyTimer.Timeout += () => {
+			ExclamationPoint.Visible = false;
+		};
+
 		spawnPoints = Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 		lastDirection = new Vector2(0, 1);
 
@@ -112,6 +116,10 @@ public partial class Clown : Enemy
 				}
 				else
 				{
+					JumpscareGui jumpscareGui = Overworld.InstantiateScene("res://Replicatables/Gui/JumpscareGui.tscn") as JumpscareGui;
+					jumpscareGui.Speed = 0.2f;
+					AddChild(jumpscareGui);
+
 					globalObject.myData.Health -= 1;
 					if (globalObject.myData.Health <= 0)
 					{

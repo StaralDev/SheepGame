@@ -25,6 +25,9 @@ public partial class Enemy : CharacterBody2D
 	protected Sparky sparky;
 	protected bool searching = true;
 
+	protected AnimatedSprite2D ExclamationPoint;
+	protected Timer sawSparkyTimer;
+
 	protected float transparancyAmount = 0f;
 	protected int transparencyDirection = 1;
 
@@ -61,6 +64,8 @@ public partial class Enemy : CharacterBody2D
 		enemyLostTimer = GetNode<Timer>("EnemyLostTimer");
 		newPathTimer = GetNode<Timer>("NewPathTimer");
 		lightCone = enemySightboxCollider.GetNode<Sprite2D>("LightCone");
+		ExclamationPoint = GetNode<AnimatedSprite2D>("ExclamationPoint");
+		sawSparkyTimer = GetNode<Timer>("ExclamationPointTimer");
 
 		globalObject = Overworld.GetGlobal(GetTree());
 
@@ -77,6 +82,13 @@ public partial class Enemy : CharacterBody2D
 
 				if (canSeeSparky)
 				{
+					if (searching)
+					{
+						ExclamationPoint.Visible = true;
+						ExclamationPoint.Play();
+						sawSparkyTimer.Start();
+					}
+
 					searching = false;
 					transparencyDirection = -1;
 				}

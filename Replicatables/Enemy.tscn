@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dov5ysi8pmn0q"]
+[gd_scene load_steps=14 format=3 uid="uid://dov5ysi8pmn0q"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_4t625"]
 [ext_resource type="Texture2D" uid="uid://dynssvcqaavb7" path="res://Sprites/Placeholder/testenemy.png" id="1_vlg65"]
 [ext_resource type="Texture2D" uid="uid://cr8un8h2flj32" path="res://Sprites/Misc/LightCone.png" id="3_1vjeu"]
+[ext_resource type="Texture2D" uid="uid://630tyl8yla6t" path="res://Sprites/Misc/ExclamationMark.png" id="4_am2uu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bfog"]
 animations = [{
@@ -22,6 +23,42 @@ radius = 80.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n6o6"]
 size = Vector2(136, 426)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17gp"]
+atlas = ExtResource("4_am2uu")
+region = Rect2(0, 0, 7, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spuvr"]
+atlas = ExtResource("4_am2uu")
+region = Rect2(7, 0, 7, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k88fl"]
+atlas = ExtResource("4_am2uu")
+region = Rect2(14, 0, 7, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mddee"]
+atlas = ExtResource("4_am2uu")
+region = Rect2(21, 0, 7, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6lkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h17gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spuvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k88fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mddee")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4t625")
@@ -71,3 +108,14 @@ one_shot = true
 [node name="NewPathTimer" type="Timer" parent="."]
 wait_time = 7.0
 autostart = true
+
+[node name="ExclamationPointTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ExclamationPoint" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -132)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_a6lkx")

@@ -65,6 +65,21 @@ public partial class Global : Godot.Node
 
     private static int CompareBilboards(Bilboard a, Bilboard b)
     {
+        if (a.node == null && b.node != null)
+        {
+            return 0.CompareTo(b.node.Position.Y + b.overlapOffset);
+        }
+
+        if (b.node == null && a.node != null)
+        {
+            return (a.node.Position.Y + a.overlapOffset).CompareTo(0);
+        }
+
+        if (a.node == null && b.node == null)
+        {
+            return 0;
+        }
+
         return (a.node.Position.Y + a.overlapOffset).CompareTo(b.node.Position.Y + b.overlapOffset);
     }
 
@@ -73,6 +88,7 @@ public partial class Global : Godot.Node
         Bilboards.Sort(CompareBilboards);
 
         foreach (Bilboard bilboard in Bilboards) {
+            if (bilboard.node == null) { continue; }
             bilboard.node.MoveToFront();
         }
 

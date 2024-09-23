@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
-[ext_resource type="SpriteFrames" uid="uid://b627m7oheq7pp" path="res://Resources/SparkySpriteFrames.tres" id="2_4edu5"]
+[ext_resource type="SpriteFrames" path="res://Resources/SparkySpriteFrames.tres" id="2_4edu5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 

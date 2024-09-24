@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://5623wvu7w45e"
-path="res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"
+uid="uid://qj265q42uqh2"
+path="res://.godot/imported/YellowClownJumpScare.png-5576c9c50fddde5f9199f4650790988f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/OverworldAssets.png"
-dest_files=["res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"]
+source_file="res://ArtistDropbox/YellowClownJumpScare.png"
+dest_files=["res://.godot/imported/YellowClownJumpScare.png-5576c9c50fddde5f9199f4650790988f.ctex"]
 
 [params]
 

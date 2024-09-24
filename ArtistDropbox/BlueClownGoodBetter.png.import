@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://5623wvu7w45e"
-path="res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"
+uid="uid://dxmy1fmp0oibg"
+path="res://.godot/imported/BlueClownGoodBetter.png-7a8fc2355751a17e9d826ac7c3057ba8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/OverworldAssets.png"
-dest_files=["res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"]
+source_file="res://ArtistDropbox/BlueClownGoodBetter.png"
+dest_files=["res://.godot/imported/BlueClownGoodBetter.png-7a8fc2355751a17e9d826ac7c3057ba8.ctex"]
 
 [params]
 

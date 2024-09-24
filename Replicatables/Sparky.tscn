@@ -21,7 +21,9 @@ script = ExtResource("1_40s08")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_4edu5")
-animation = &"WalkLeft"
+animation = &"WalkRight"
+frame = 2
+frame_progress = 0.0334198
 
 [node name="SheepHitbox" type="Area2D" parent="."]
 

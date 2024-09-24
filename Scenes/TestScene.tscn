@@ -53,18 +53,6 @@ position = Vector2(1782, -179)
 [node name="EnemySpawnPoint3" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1236, -643)
 
-[node name="RedClown" parent="." instance=ExtResource("6_ixqy6")]
-position = Vector2(-1128, 691)
-
-[node name="GreenClown" parent="." instance=ExtResource("6_1qu41")]
-position = Vector2(1865, -677)
-
-[node name="YellowClown" parent="." instance=ExtResource("7_w8g2g")]
-position = Vector2(1162, 243)
-
-[node name="BlueClown" parent="." instance=ExtResource("8_e7hxh")]
-position = Vector2(-1453, -851)
-
 [node name="YellowBalloon" parent="." instance=ExtResource("9_8df73")]
 position = Vector2(1001, -16)
 
@@ -76,3 +64,15 @@ position = Vector2(1632, -698)
 
 [node name="BlueBalloon" parent="." instance=ExtResource("12_1aihm")]
 position = Vector2(-1245, -829)
+
+[node name="BlueClown" parent="." instance=ExtResource("8_e7hxh")]
+position = Vector2(-820, -756)
+
+[node name="GreenClown" parent="." instance=ExtResource("6_1qu41")]
+position = Vector2(2115, -498)
+
+[node name="RedClown" parent="." instance=ExtResource("6_ixqy6")]
+position = Vector2(-1388, 779)
+
+[node name="YellowClown" parent="." instance=ExtResource("7_w8g2g")]
+position = Vector2(-146, 400)

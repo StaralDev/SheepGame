@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo4wc8vg3n07q"]
+[gd_scene load_steps=3 format=3 uid="uid://bo4wc8vg3n07q"]
 
 [ext_resource type="Script" path="res://Scripts/JumpscareGui.cs" id="1_6t0w8"]
+[ext_resource type="Texture2D" uid="uid://cr8cfwwdhhygk" path="res://Sprites/Clowns/RedClownJumpScare.png" id="2_w23es"]
 
 [node name="Jumpscare" type="CanvasLayer"]
 script = ExtResource("1_6t0w8")
@@ -9,3 +10,9 @@ script = ExtResource("1_6t0w8")
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
+
+[node name="CenterImage" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(960, 512)
+scale = Vector2(4, 4)
+texture = ExtResource("2_w23es")

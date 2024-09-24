@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6aqqp0y2lfk5"
-path="res://.godot/imported/CageBadJumpScare.png-1a911f7b0353dbba8704eb1774139b8b.ctex"
+uid="uid://cr8cfwwdhhygk"
+path="res://.godot/imported/RedClownJumpScare.png-2143d2ed1a270bb35d3c6c660ae18571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/CageBadJumpScare.png"
-dest_files=["res://.godot/imported/CageBadJumpScare.png-1a911f7b0353dbba8704eb1774139b8b.ctex"]
+source_file="res://Sprites/Clowns/RedClownJumpScare.png"
+dest_files=["res://.godot/imported/RedClownJumpScare.png-2143d2ed1a270bb35d3c6c660ae18571.ctex"]
 
 [params]
 

@@ -194,6 +194,15 @@ public partial class Sparky : CharacterBody2D
 
 		Vector2 magnitude = Position - lastPosition;
 
+		if (lastDirection.X == 1)
+		{
+			sprite.Scale = new Vector2(-4, 4);
+		}
+		else
+		{
+			sprite.Scale = new Vector2(4, 4);
+		}
+
 		if (magnitude.X != 0 || magnitude.Y != 0)
 		{
 			if (!sprite.IsPlaying())

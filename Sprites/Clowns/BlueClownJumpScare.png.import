@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qj265q42uqh2"
-path="res://.godot/imported/YellowClownJumpScare.png-5576c9c50fddde5f9199f4650790988f.ctex"
+uid="uid://e0en4dcppln"
+path="res://.godot/imported/BlueClownJumpScare.png-50f77f8fe7dbded2aa1a140db8cf286d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/YellowClownJumpScare.png"
-dest_files=["res://.godot/imported/YellowClownJumpScare.png-5576c9c50fddde5f9199f4650790988f.ctex"]
+source_file="res://Sprites/Clowns/BlueClownJumpScare.png"
+dest_files=["res://.godot/imported/BlueClownJumpScare.png-50f77f8fe7dbded2aa1a140db8cf286d.ctex"]
 
 [params]
 

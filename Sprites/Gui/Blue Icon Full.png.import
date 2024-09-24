@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg52nixsi8123"
-path="res://.godot/imported/SparkySpritesBetter.png-e6b997cf55d8f1de6940e5627fd2b511.ctex"
+uid="uid://dtir0iw4psqtv"
+path="res://.godot/imported/Blue Icon Full.png-5d58b3d665b9b79bc9743492ccd40e5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/SparkySpritesBetter.png"
-dest_files=["res://.godot/imported/SparkySpritesBetter.png-e6b997cf55d8f1de6940e5627fd2b511.ctex"]
+source_file="res://Sprites/Gui/Blue Icon Full.png"
+dest_files=["res://.godot/imported/Blue Icon Full.png-5d58b3d665b9b79bc9743492ccd40e5b.ctex"]
 
 [params]
 

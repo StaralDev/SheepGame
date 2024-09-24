@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg6hioerfxax6"
-path="res://.godot/imported/emptyHeart.png-668fe4559a808841a904612effeb073c.ctex"
+uid="uid://cr8cfwwdhhygk"
+path="res://.godot/imported/RedClownJumpScare.png-2143d2ed1a270bb35d3c6c660ae18571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/emptyHeart.png"
-dest_files=["res://.godot/imported/emptyHeart.png-668fe4559a808841a904612effeb073c.ctex"]
+source_file="res://Sprites/Clowns/RedClownJumpScare.png"
+dest_files=["res://.godot/imported/RedClownJumpScare.png-2143d2ed1a270bb35d3c6c660ae18571.ctex"]
 
 [params]
 

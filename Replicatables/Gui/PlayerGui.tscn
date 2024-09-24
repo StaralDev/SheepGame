@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://03noon8ca5q0"]
+[gd_scene load_steps=8 format=3 uid="uid://03noon8ca5q0"]
 
-[ext_resource type="Texture2D" uid="uid://c381anfcksi3a" path="res://ArtistDropbox/shadedemptyHeart.png" id="1_61irw"]
-[ext_resource type="Texture2D" uid="uid://c4r0dyhxb1mry" path="res://ArtistDropbox/fullHeart.png" id="2_qiykj"]
-[ext_resource type="Texture2D" uid="uid://hjmncp0rwuj6" path="res://ArtistDropbox/Green Icon Full.png" id="3_f4ir4"]
-[ext_resource type="Texture2D" uid="uid://dtir0iw4psqtv" path="res://ArtistDropbox/Blue Icon Full.png" id="4_14o1w"]
-[ext_resource type="Texture2D" uid="uid://cug5uml3s2ch5" path="res://ArtistDropbox/Red Icon full.png" id="5_42lb6"]
-[ext_resource type="Texture2D" uid="uid://7gi87u4p4rsr" path="res://ArtistDropbox/Yellow Icon Full.png" id="6_d6t4a"]
+[ext_resource type="Texture2D" uid="uid://c381anfcksi3a" path="res://Sprites/Gui/shadedemptyHeart.png" id="1_61irw"]
+[ext_resource type="Script" path="res://Scripts/PlayerGui.cs" id="1_dbi60"]
+[ext_resource type="Texture2D" uid="uid://c4r0dyhxb1mry" path="res://Sprites/Gui/fullHeart.png" id="2_qiykj"]
+[ext_resource type="Texture2D" uid="uid://hjmncp0rwuj6" path="res://Sprites/Gui/Green Icon Full.png" id="3_f4ir4"]
+[ext_resource type="Texture2D" uid="uid://dtir0iw4psqtv" path="res://Sprites/Gui/Blue Icon Full.png" id="4_14o1w"]
+[ext_resource type="Texture2D" uid="uid://cug5uml3s2ch5" path="res://Sprites/Gui/Red Icon full.png" id="5_42lb6"]
+[ext_resource type="Texture2D" uid="uid://7gi87u4p4rsr" path="res://Sprites/Gui/Yellow Icon Full.png" id="6_d6t4a"]
 
 [node name="PlayerGui" type="CanvasLayer"]
+script = ExtResource("1_dbi60")
 
 [node name="ShadedemptyHeart" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -46,24 +48,28 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_qiykj")
 
 [node name="GreenIcon" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(65, 172)
 scale = Vector2(4, 4)
 texture = ExtResource("3_f4ir4")
 
 [node name="BlueIcon" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(65, 172)
 scale = Vector2(4, 4)
 texture = ExtResource("4_14o1w")
 
 [node name="RedIcon" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(65, 172)
 scale = Vector2(4, 4)
 texture = ExtResource("5_42lb6")
 
-[node name="YellowIcon2" type="Sprite2D" parent="."]
+[node name="YellowIcon" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(65, 172)
 scale = Vector2(4, 4)

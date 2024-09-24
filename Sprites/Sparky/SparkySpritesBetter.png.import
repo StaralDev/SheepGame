@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e0en4dcppln"
-path="res://.godot/imported/BlueClownJumpScare.png-c1fa3baf07f6921c22e92ddb2207fdac.ctex"
+uid="uid://dg52nixsi8123"
+path="res://.godot/imported/SparkySpritesBetter.png-4a8553ef011dd9fd2a01538d5aaeaf2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/BlueClownJumpScare.png"
-dest_files=["res://.godot/imported/BlueClownJumpScare.png-c1fa3baf07f6921c22e92ddb2207fdac.ctex"]
+source_file="res://Sprites/Sparky/SparkySpritesBetter.png"
+dest_files=["res://.godot/imported/SparkySpritesBetter.png-4a8553ef011dd9fd2a01538d5aaeaf2e.ctex"]
 
 [params]
 

@@ -10,6 +10,14 @@ public partial class Clown : Enemy
 	[Export]
 	public bool Pacified { get; set; } = false;
 
+	[Export]
+	public bool FlipX = false;
+	[Export]
+	public bool DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing = false;
+
+	[Export]
+	public Texture2D JumpscareImage;
+
 	private Vector2 lastDirection;
 	private string animation = "WalkUp";
 
@@ -109,6 +117,7 @@ public partial class Clown : Enemy
 				{
 					Pacified = true;
 					globalObject.myData.currentBalloon = null;
+					sparky.UpdateBalloon();
 					
 					sparky.Persue(ColorName, false);
 
@@ -118,9 +127,11 @@ public partial class Clown : Enemy
 				{
 					JumpscareGui jumpscareGui = Overworld.InstantiateScene("res://Replicatables/Gui/JumpscareGui.tscn") as JumpscareGui;
 					jumpscareGui.Speed = 0.2f;
-					AddChild(jumpscareGui);
+					globalObject.AddChild(jumpscareGui);
+					jumpscareGui.CenterImage.Texture = JumpscareImage;
 
 					globalObject.myData.Health -= 1;
+					sparky.UpdateHealth();
 					if (globalObject.myData.Health <= 0)
 					{
 						Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());
@@ -217,6 +228,32 @@ public partial class Clown : Enemy
 		sprite.Animation = animation;
 
 		bool spritePlaying = sprite.IsPlaying();
+
+		// Like and share if you hate magnus
+		if (FlipX) {
+			if (DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing)
+			{
+				if (lastDirection.X == -1)
+				{
+					sprite.Scale = new Vector2(-4, 4);
+				}
+				else
+				{
+					sprite.Scale = new Vector2(4, 4);
+				}
+			}
+			else
+			{
+				if (lastDirection.X == 1)
+				{
+					sprite.Scale = new Vector2(-4, 4);
+				}
+				else
+				{
+					sprite.Scale = new Vector2(4, 4);
+				}
+			}
+		}
 
 		if (Pacified)
 		{

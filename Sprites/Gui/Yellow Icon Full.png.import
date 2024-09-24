@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tsab1qvffcky"
-path="res://.godot/imported/RedClownEvilBetter.png-619914eff7a99b51edcb0be9025770fb.ctex"
+uid="uid://7gi87u4p4rsr"
+path="res://.godot/imported/Yellow Icon Full.png-96f65c0cde5c0d8633327c54ff6899f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/RedClownEvilBetter.png"
-dest_files=["res://.godot/imported/RedClownEvilBetter.png-619914eff7a99b51edcb0be9025770fb.ctex"]
+source_file="res://Sprites/Gui/Yellow Icon Full.png"
+dest_files=["res://.godot/imported/Yellow Icon Full.png-96f65c0cde5c0d8633327c54ff6899f9.ctex"]
 
 [params]
 

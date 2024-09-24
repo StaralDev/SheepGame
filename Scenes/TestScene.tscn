@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cixi1q8mhkjt4"]
+[gd_scene load_steps=15 format=4 uid="uid://cixi1q8mhkjt4"]
 
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
 [ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/Placeholder/icon.svg" id="2_c24ag"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://vy8l5ivul6r4" path="res://Replicatables/Balloons/RedBalloon.tscn" id="10_0551y"]
 [ext_resource type="PackedScene" uid="uid://dvr3itp0js57v" path="res://Replicatables/Balloons/GreenBalloon.tscn" id="11_wael6"]
 [ext_resource type="PackedScene" uid="uid://dm82rb5ladryl" path="res://Replicatables/Balloons/BlueBalloon.tscn" id="12_1aihm"]
-[ext_resource type="PackedScene" uid="uid://03noon8ca5q0" path="res://Replicatables/Gui/PlayerGui.tscn" id="13_fpvab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
 size = Vector2(128, 128)
@@ -77,5 +76,3 @@ position = Vector2(1632, -698)
 
 [node name="BlueBalloon" parent="." instance=ExtResource("12_1aihm")]
 position = Vector2(-1245, -829)
-
-[node name="PlayerGui" parent="." instance=ExtResource("13_fpvab")]

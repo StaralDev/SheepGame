@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtir0iw4psqtv"
-path="res://.godot/imported/Blue Icon Full.png-795a6ea738ade6c09ee98d5c4fd789c7.ctex"
+uid="uid://cug5uml3s2ch5"
+path="res://.godot/imported/Red Icon full.png-816e7de9946e3b9eb212efe1df0622d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/Blue Icon Full.png"
-dest_files=["res://.godot/imported/Blue Icon Full.png-795a6ea738ade6c09ee98d5c4fd789c7.ctex"]
+source_file="res://Sprites/Gui/Red Icon full.png"
+dest_files=["res://.godot/imported/Red Icon full.png-816e7de9946e3b9eb212efe1df0622d0.ctex"]
 
 [params]
 

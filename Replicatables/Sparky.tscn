@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckgqi47b4c6eh"]
+[gd_scene load_steps=7 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
 [ext_resource type="SpriteFrames" uid="uid://b627m7oheq7pp" path="res://Resources/SparkySpriteFrames.tres" id="2_4edu5"]
+[ext_resource type="PackedScene" uid="uid://03noon8ca5q0" path="res://Replicatables/Gui/PlayerGui.tscn" id="2_32mm5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
@@ -14,13 +15,13 @@ size = Vector2(86, 135)
 [node name="Sparky" type="CharacterBody2D"]
 script = ExtResource("1_40s08")
 
+[node name="PlayerGui" parent="." instance=ExtResource("2_32mm5")]
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_4edu5")
-animation = &"WalkDown"
-frame = 2
-frame_progress = 0.571273
+animation = &"WalkLeft"
 
 [node name="SheepHitbox" type="Area2D" parent="."]
 

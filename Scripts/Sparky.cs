@@ -15,6 +15,8 @@ public partial class Sparky : CharacterBody2D
 	private CollisionShape2D sheepTouchboxCollider;
 	private Camera2D camera;
 
+	private PlayerGui playerGui;
+
 	private Vector2 lastPosition;
 
 	private string animation;
@@ -144,6 +146,22 @@ public partial class Sparky : CharacterBody2D
 		}
 	}
 
+	public void UpdateHealth()
+	{
+		for (int i = 0; i < playerGui.Hearts.Length; i++)
+		{
+			playerGui.Hearts[i].Visible = myGlobalObject.myData.Health >= i+1;
+		}
+	}
+
+	public void UpdateBalloon()
+	{
+		playerGui.IconLiterals.Red.Visible = myGlobalObject.myData.currentBalloon == Balloons.Red;
+		playerGui.IconLiterals.Yellow.Visible = myGlobalObject.myData.currentBalloon == Balloons.Yellow;
+		playerGui.IconLiterals.Green.Visible = myGlobalObject.myData.currentBalloon == Balloons.Green;
+		playerGui.IconLiterals.Blue.Visible = myGlobalObject.myData.currentBalloon == Balloons.Blue;
+	}
+
     public override void _Ready()
     {
 		animation = "WalkDown";
@@ -151,6 +169,8 @@ public partial class Sparky : CharacterBody2D
 		sheepCollider = GetNode<CollisionShape2D>("SheepCollider");
 		sheepTouchbox = GetNode<Area2D>("SheepTouchbox");
 		sheepTouchboxCollider = sheepTouchbox.GetNode<CollisionShape2D>("CollisionShape2D");
+
+		playerGui = GetNode<PlayerGui>("PlayerGui");
 
         lastDirection = new Vector2(1, 0);
 		lastPosition = Vector2.Zero;

@@ -109,6 +109,7 @@ public partial class Clown : Enemy
 				{
 					Pacified = true;
 					globalObject.myData.currentBalloon = null;
+					sparky.UpdateBalloon();
 					
 					sparky.Persue(ColorName, false);
 
@@ -121,6 +122,7 @@ public partial class Clown : Enemy
 					AddChild(jumpscareGui);
 
 					globalObject.myData.Health -= 1;
+					sparky.UpdateHealth();
 					if (globalObject.myData.Health <= 0)
 					{
 						Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());

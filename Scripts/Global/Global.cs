@@ -38,6 +38,11 @@ public partial class Global : Godot.Node
         Bilboards.Add(bilboard);
     }
 
+    public void ClearBilboards()
+    {
+        Bilboards.Clear();
+    }
+
     public void AddOverlay(Node2D node)
     {
         Overlays.Insert(0, node);
@@ -52,6 +57,8 @@ public partial class Global : Godot.Node
     {
         SceneTree tree = GetTree();
         tree.CurrentScene.QueueFree();
+
+        ClearBilboards();
 
         var newScene = Overworld.InstantiateScene(packedScene);
         tree.Root.AddChild(newScene);
@@ -80,7 +87,14 @@ public partial class Global : Godot.Node
             return 0;
         }
 
-        return (a.node.Position.Y + a.overlapOffset).CompareTo(b.node.Position.Y + b.overlapOffset);
+        try
+        {
+            return (a.node.Position.Y + a.overlapOffset).CompareTo(b.node.Position.Y + b.overlapOffset);
+        } 
+        catch
+        {
+            return 0;
+        }
     }
 
     public override void _Process(double delta)

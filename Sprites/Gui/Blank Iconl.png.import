@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7gi87u4p4rsr"
-path="res://.godot/imported/Yellow Icon Full.png-0839feb83bdb1d20df90ce268f69d64d.ctex"
+uid="uid://ct2nemg0d0j"
+path="res://.godot/imported/Blank Iconl.png-899e7c98f83b2f464329c08ecbc673c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/Yellow Icon Full.png"
-dest_files=["res://.godot/imported/Yellow Icon Full.png-0839feb83bdb1d20df90ce268f69d64d.ctex"]
+source_file="res://Sprites/Gui/Blank Iconl.png"
+dest_files=["res://.godot/imported/Blank Iconl.png-899e7c98f83b2f464329c08ecbc673c8.ctex"]
 
 [params]
 

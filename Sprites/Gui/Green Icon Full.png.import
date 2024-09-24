@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4r0dyhxb1mry"
-path="res://.godot/imported/fullHeart.png-915a735465b7dbaf1a55b8fa0cf341a8.ctex"
+uid="uid://hjmncp0rwuj6"
+path="res://.godot/imported/Green Icon Full.png-95ed9766c4ce358027d2373592c42d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/fullHeart.png"
-dest_files=["res://.godot/imported/fullHeart.png-915a735465b7dbaf1a55b8fa0cf341a8.ctex"]
+source_file="res://Sprites/Gui/Green Icon Full.png"
+dest_files=["res://.godot/imported/Green Icon Full.png-95ed9766c4ce358027d2373592c42d17.ctex"]
 
 [params]
 

@@ -135,6 +135,16 @@ public partial class Clown : Enemy
 					{
 						globalObject.myData.pasifiedData.Blue = true;
 					}
+
+					if (
+						globalObject.myData.pasifiedData.Blue &&
+						globalObject.myData.pasifiedData.Red &&
+						globalObject.myData.pasifiedData.Green &&
+						globalObject.myData.pasifiedData.Yellow
+					)
+					{
+						Overworld.ChangeScene("res://Scenes/WinScene.tscn", GetTree());
+					}
 					
 					sparky.Persue(ColorName, false);
 

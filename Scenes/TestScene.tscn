@@ -26,7 +26,7 @@ agent_radius = 95.0
 [node name="TestScene" type="Node2D"]
 
 [node name="GenericObject" type="Sprite2D" parent="."]
-position = Vector2(-130.5, -55.5)
+position = Vector2(-359.5, -280.5)
 scale = Vector2(0.507812, 0.523438)
 texture = ExtResource("2_c24ag")
 
@@ -37,6 +37,7 @@ shape = SubResource("RectangleShape2D_fcsmf")
 debug_color = Color(0.486938, 0.434444, 1, 0.42)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-229, -225)
 navigation_polygon = SubResource("NavigationPolygon_kg8hg")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
@@ -44,39 +45,40 @@ tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAA
 tile_set = ExtResource("4_l4c8n")
 
 [node name="Sparky" parent="." instance=ExtResource("1_ojl2g")]
+position = Vector2(-229, -225)
 
 [node name="EnemySpawnPoint" parent="." instance=ExtResource("5_fuh1h")]
-position = Vector2(-1082, 825)
+position = Vector2(-1311, 600)
 
 [node name="EnemySpawnPoint2" parent="." instance=ExtResource("5_fuh1h")]
-position = Vector2(1782, -179)
+position = Vector2(1553, -404)
 
 [node name="EnemySpawnPoint3" parent="." instance=ExtResource("5_fuh1h")]
-position = Vector2(-1236, -643)
+position = Vector2(-1465, -868)
 
 [node name="YellowBalloon" parent="." instance=ExtResource("9_8df73")]
-position = Vector2(1001, -16)
+position = Vector2(772, -241)
 
 [node name="RedBalloon" parent="." instance=ExtResource("10_0551y")]
-position = Vector2(-860, 764)
+position = Vector2(-1089, 539)
 
 [node name="GreenBalloon" parent="." instance=ExtResource("11_wael6")]
-position = Vector2(1632, -698)
+position = Vector2(1403, -923)
 
 [node name="BlueBalloon" parent="." instance=ExtResource("12_1aihm")]
-position = Vector2(-1245, -829)
+position = Vector2(-1474, -1054)
 
 [node name="BlueClown" parent="." instance=ExtResource("8_e7hxh")]
-position = Vector2(-820, -756)
+position = Vector2(-1049, -981)
 
 [node name="GreenClown" parent="." instance=ExtResource("6_1qu41")]
-position = Vector2(2115, -498)
+position = Vector2(1886, -723)
 
 [node name="RedClown" parent="." instance=ExtResource("6_ixqy6")]
-position = Vector2(-1388, 779)
+position = Vector2(-1617, 554)
 
 [node name="YellowClown" parent="." instance=ExtResource("7_w8g2g")]
-position = Vector2(-146, 400)
+position = Vector2(-375, 175)
 
 [node name="Interaction" parent="." instance=ExtResource("13_ohfvm")]
-position = Vector2(644, -328)
+position = Vector2(415, -553)

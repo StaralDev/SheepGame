@@ -118,6 +118,23 @@ public partial class Clown : Enemy
 					Pacified = true;
 					globalObject.myData.currentBalloon = null;
 					sparky.UpdateBalloon();
+
+					if (ColorName == "Red")
+					{
+						globalObject.myData.pasifiedData.Red = true;
+					}
+					else if (ColorName == "Yellow")
+					{
+						globalObject.myData.pasifiedData.Yellow = true;
+					}
+					else if (ColorName == "Green")
+					{
+						globalObject.myData.pasifiedData.Green = true;
+					}
+					else if (ColorName == "Blue")
+					{
+						globalObject.myData.pasifiedData.Blue = true;
+					}
 					
 					sparky.Persue(ColorName, false);
 

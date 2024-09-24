@@ -15,14 +15,28 @@ public partial class Global : Godot.Node
     private List<Bilboard> Bilboards = new();
     private List<Node2D> Overlays = new();
 
+    public struct PasifiedData {
+        public bool Red;
+        public bool Yellow;
+        public bool Green;
+        public bool Blue;
+    }
+
     public struct PlayerData {
         public int Health;
         public Balloons? currentBalloon;
+        public PasifiedData pasifiedData;
     }
 
     public PlayerData myData = new PlayerData{
         Health = 3,
         currentBalloon = null,
+        pasifiedData = new PasifiedData{
+            Red = false,
+            Green = false,
+            Yellow = false,
+            Blue = false
+        }
     };
 
     public void CreateBilboard(Node2D node, float overlapOffset)

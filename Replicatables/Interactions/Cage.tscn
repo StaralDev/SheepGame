@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dll0dadd1ttbh"]
+
+[ext_resource type="PackedScene" uid="uid://c6vy71h774ccl" path="res://Replicatables/Interaction.tscn" id="1_mnmsn"]
+[ext_resource type="Script" path="res://Sprites/Cage.cs" id="2_wnvvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eierd"]
+size = Vector2(93, 93)
+
+[node name="Interaction" instance=ExtResource("1_mnmsn")]
+script = ExtResource("2_wnvvt")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_eierd")

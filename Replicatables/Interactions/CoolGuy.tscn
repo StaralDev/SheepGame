@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8ikjkhqybyp5"]
+
+[ext_resource type="PackedScene" uid="uid://c6vy71h774ccl" path="res://Replicatables/Interaction.tscn" id="1_f6053"]
+[ext_resource type="Texture2D" uid="uid://cjt4q7tkh4rio" path="res://ArtistDropbox/BunnyCarnie.png" id="2_144mu"]
+[ext_resource type="Script" path="res://Scripts/CoolGuy.cs" id="2_sfm8n"]
+[ext_resource type="Texture2D" uid="uid://dv7x8ts1upled" path="res://ArtistDropbox/TextBox.png" id="4_lr242"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwwqy"]
+atlas = ExtResource("2_144mu")
+region = Rect2(0, 0, 32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqr0o"]
+atlas = ExtResource("2_144mu")
+region = Rect2(32, 0, 32, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_28awe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwwqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqr0o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoolGuy" instance=ExtResource("1_f6053")]
+script = ExtResource("2_sfm8n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(-17, -64)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_28awe")
+
+[node name="TextBox" type="Sprite2D" parent="." index="2"]
+visible = false
+texture_filter = 1
+position = Vector2(-91, -204)
+scale = Vector2(4, 4)
+texture = ExtResource("4_lr242")

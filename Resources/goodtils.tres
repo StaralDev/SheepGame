@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://cxj7d0q4t8qhg"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://cx6kivyvfkqpd"]
 
 [ext_resource type="Texture2D" uid="uid://b64ia0cwukmot" path="res://ArtistDropbox/AssetsBetter.png" id="1_if3oi"]
 [ext_resource type="Texture2D" uid="uid://c0g13x1i5g6fg" path="res://ArtistDropbox/FixedTent.png" id="2_fhau7"]

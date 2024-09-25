@@ -80,4 +80,12 @@ namespace SheepGame
         }
 
     }
+
+    class Mathsg
+    {
+        public static float QuadBezier(float a, float b, float c, float t)
+        {
+            return Mathf.Lerp(Mathf.Lerp(a, b, t), Mathf.Lerp(b, c, t), t);
+        }
+    }
 }

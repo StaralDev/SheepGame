@@ -103,7 +103,10 @@ public partial class Enemy : CharacterBody2D
 		if (PathfindingEnable)
 		{
 			enemySightline.Position = Position;
-			enemySightline.TargetPosition = sparky.Position - Position;
+			if (sparky != null)
+			{
+				enemySightline.TargetPosition = sparky.Position - Position;
+			}
 
 			if (searching) 
 			{

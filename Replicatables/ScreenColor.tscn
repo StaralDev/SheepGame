@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://drc3mk616tjal"]
+
+[ext_resource type="Script" path="res://Scripts/ScreenColor.cs" id="1_1dh4v"]
+
+[node name="ScreenColor" type="CanvasLayer"]
+script = ExtResource("1_1dh4v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -40.0
+offset_top = -24.0
+offset_right = 1979.0
+offset_bottom = 1135.0

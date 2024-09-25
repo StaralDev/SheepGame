@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkoyaavgtxa1h"]
+
+[ext_resource type="PackedScene" uid="uid://c6vy71h774ccl" path="res://Replicatables/Interaction.tscn" id="1_wc2ix"]
+[ext_resource type="Script" path="res://Scripts/SceneExit.cs" id="2_lkeqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu8cj"]
+
+[node name="SceneExit" instance=ExtResource("1_wc2ix")]
+script = ExtResource("2_lkeqx")
+RunOnEntered = true
+Enabled = true
+TransitionTime = 2.0
+NewScene = "res://Scenes/MainGame/StageFright.tscn"
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_cu8cj")

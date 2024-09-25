@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eierd"]
 size = Vector2(93, 93)
 
-[node name="Interaction" instance=ExtResource("1_mnmsn")]
+[node name="Cage" instance=ExtResource("1_mnmsn")]
 script = ExtResource("2_wnvvt")
 
 [node name="CollisionShape2D" parent="." index="0"]

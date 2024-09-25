@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://s4vtcsii50ev"]
+[gd_scene load_steps=14 format=4 uid="uid://s4vtcsii50ev"]
 
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="1_c1yix"]
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="2_horfu"]
 [ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="3_mwjma"]
-[ext_resource type="PackedScene" uid="uid://0braobhhc8wy" path="res://Scenes/BalloonTest.tscn" id="4_mfv0i"]
 [ext_resource type="Texture2D" uid="uid://0w0rhhyux2fq" path="res://ArtistDropbox/FairGroundNight.png" id="5_lt83l"]
 [ext_resource type="PackedScene" uid="uid://dm82rb5ladryl" path="res://Replicatables/Balloons/BlueBalloon.tscn" id="6_pr53h"]
 [ext_resource type="PackedScene" uid="uid://dvr3itp0js57v" path="res://Replicatables/Balloons/GreenBalloon.tscn" id="7_0csku"]
@@ -33,10 +32,6 @@ tile_set = ExtResource("1_c1yix")
 [node name="Sparky" parent="." instance=ExtResource("2_horfu")]
 z_index = 2
 position = Vector2(1838, 2759)
-
-[node name="Sprite2D" parent="." instance=ExtResource("4_mfv0i")]
-position = Vector2(2531, 3435)
-texture = null
 
 [node name="Clown" parent="." instance=ExtResource("3_mwjma")]
 visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dynssvcqaavb7"
-path="res://.godot/imported/testenemy.png-a4534e6d12a379999c3e22c8199bece9.ctex"
+uid="uid://c381anfcksi3a"
+path="res://.godot/imported/shadedemptyHeart.png-1fe76269fa7692b2984c75d8c0739f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/testenemy.png"
-dest_files=["res://.godot/imported/testenemy.png-a4534e6d12a379999c3e22c8199bece9.ctex"]
+source_file="res://ArtistDropbox/shadedemptyHeart.png"
+dest_files=["res://.godot/imported/shadedemptyHeart.png-1fe76269fa7692b2984c75d8c0739f9f.ctex"]
 
 [params]
 

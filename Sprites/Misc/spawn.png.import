@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brg0xtk7nfpi7"
-path="res://.godot/imported/green Boloon File.png-f4ad35a09b9bb7f5969e2e18dc48ebc8.ctex"
+uid="uid://24v4t0eob38s"
+path="res://.godot/imported/spawn.png-655058a964820322f61b3b2513cc4efc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/green Boloon File.png"
-dest_files=["res://.godot/imported/green Boloon File.png-f4ad35a09b9bb7f5969e2e18dc48ebc8.ctex"]
+source_file="res://Sprites/Misc/spawn.png"
+dest_files=["res://.godot/imported/spawn.png-655058a964820322f61b3b2513cc4efc.ctex"]
 
 [params]
 

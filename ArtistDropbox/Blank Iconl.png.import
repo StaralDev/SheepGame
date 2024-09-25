@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://5623wvu7w45e"
-path="res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"
+uid="uid://ct2nemg0d0j"
+path="res://.godot/imported/Blank Iconl.png-7337f9b990dc0492926e6308ed952388.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/OverworldAssets.png"
-dest_files=["res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"]
+source_file="res://ArtistDropbox/Blank Iconl.png"
+dest_files=["res://.godot/imported/Blank Iconl.png-7337f9b990dc0492926e6308ed952388.ctex"]
 
 [params]
 

@@ -7,6 +7,9 @@ public partial class Sparky : CharacterBody2D
 	public const float Speed = 300f;
 	public const float SpeedBoost = 45f;
 
+	[Export]
+	public bool CameraEnabled = true;
+
 	private Vector2 lastDirection;
 
 	private AnimatedSprite2D sprite;
@@ -170,6 +173,8 @@ public partial class Sparky : CharacterBody2D
 		sheepTouchbox = GetNode<Area2D>("SheepTouchbox");
 		sheepTouchboxCollider = sheepTouchbox.GetNode<CollisionShape2D>("CollisionShape2D");
 
+		camera = GetNode<Camera2D>("Camera2D");
+
 		playerGui = GetNode<PlayerGui>("PlayerGui");
 
         lastDirection = new Vector2(1, 0);
@@ -177,6 +182,7 @@ public partial class Sparky : CharacterBody2D
 
 		myGlobalObject = Overworld.GetGlobal(GetTree());
 		myGlobalObject.CreateBilboard(this, 0);
+		camera.Enabled = CameraEnabled;
     }
 
     public override void _PhysicsProcess(double delta)

@@ -1,18 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://cixi1q8mhkjt4"]
+[gd_scene load_steps=7 format=4 uid="uid://cixi1q8mhkjt4"]
 
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
 [ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/Placeholder/icon.svg" id="2_c24ag"]
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="4_l4c8n"]
 [ext_resource type="PackedScene" uid="uid://btqgbfc6floqh" path="res://Replicatables/EnemySpawnPoint.tscn" id="5_fuh1h"]
-[ext_resource type="PackedScene" uid="uid://uc8ct1kp7po3" path="res://Replicatables/Clowns/GreenClown.tscn" id="6_1qu41"]
-[ext_resource type="PackedScene" uid="uid://bqsp4r3jlvm6o" path="res://Replicatables/Clowns/RedClown.tscn" id="6_ixqy6"]
-[ext_resource type="PackedScene" uid="uid://doo04c6b7innn" path="res://Replicatables/Clowns/YellowClown.tscn" id="7_w8g2g"]
-[ext_resource type="PackedScene" uid="uid://dkfx05ycrae4a" path="res://Replicatables/Clowns/BlueClown.tscn" id="8_e7hxh"]
-[ext_resource type="PackedScene" uid="uid://csirvq1ao5tpa" path="res://Replicatables/Balloons/YellowBalloon.tscn" id="9_8df73"]
-[ext_resource type="PackedScene" uid="uid://vy8l5ivul6r4" path="res://Replicatables/Balloons/RedBalloon.tscn" id="10_0551y"]
-[ext_resource type="PackedScene" uid="uid://dvr3itp0js57v" path="res://Replicatables/Balloons/GreenBalloon.tscn" id="11_wael6"]
-[ext_resource type="PackedScene" uid="uid://dm82rb5ladryl" path="res://Replicatables/Balloons/BlueBalloon.tscn" id="12_1aihm"]
-[ext_resource type="PackedScene" uid="uid://dll0dadd1ttbh" path="res://Replicatables/Interactions/Cage.tscn" id="13_ohfvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
 size = Vector2(128, 128)
@@ -55,30 +46,3 @@ position = Vector2(1553, -404)
 
 [node name="EnemySpawnPoint3" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1465, -868)
-
-[node name="YellowBalloon" parent="." instance=ExtResource("9_8df73")]
-position = Vector2(772, -241)
-
-[node name="RedBalloon" parent="." instance=ExtResource("10_0551y")]
-position = Vector2(-1089, 539)
-
-[node name="GreenBalloon" parent="." instance=ExtResource("11_wael6")]
-position = Vector2(1403, -923)
-
-[node name="BlueBalloon" parent="." instance=ExtResource("12_1aihm")]
-position = Vector2(-1474, -1054)
-
-[node name="BlueClown" parent="." instance=ExtResource("8_e7hxh")]
-position = Vector2(-1049, -981)
-
-[node name="GreenClown" parent="." instance=ExtResource("6_1qu41")]
-position = Vector2(1886, -723)
-
-[node name="RedClown" parent="." instance=ExtResource("6_ixqy6")]
-position = Vector2(-1617, 554)
-
-[node name="YellowClown" parent="." instance=ExtResource("7_w8g2g")]
-position = Vector2(-375, 175)
-
-[node name="Interaction" parent="." instance=ExtResource("13_ohfvm")]
-position = Vector2(415, -553)

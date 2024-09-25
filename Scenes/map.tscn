@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://s4vtcsii50ev"]
 
-[ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="1_c1yix"]
+[ext_resource type="TileSet" path="res://Resources/goodtils.tres" id="1_jpiq2"]
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="2_horfu"]
 [ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="3_mwjma"]
 [ext_resource type="PackedScene" uid="uid://btqgbfc6floqh" path="res://Replicatables/EnemySpawnPoint.tscn" id="4_x2twd"]
@@ -21,7 +21,7 @@ metadata/_edit_group_ = true
 [node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D"]
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAAXACEAAQAAAAAAAQAXACIAAQAAAAAAAQAXACMAAQAAAAAAAQAXACQAAQAAAAAAAQAXACUAAQAAAAAAAQAXACYAAQAAAAAAAQAXACcAAQAAAAAAAQAjACEAAQAAAAEAAQAjACUAAQABAAAAAQAeACoAAQABAAEAAQAgACYAAQACAAEAAQAYACsAAQADAAAAAQAjACsAAQADAAEAAQAaACkAAQAEAAAAAQAkACcAAQAEAAEAAQAZACUAAQAFAAAAAQAZACMAAQAFAAEAAQAgACEAAQAGAAAAAgAbABwAAQAGAAEAAQAfABsAAQAHAAAAAQA=")
-tile_set = ExtResource("1_c1yix")
+tile_set = ExtResource("1_jpiq2")
 
 [node name="Sparky" parent="." instance=ExtResource("2_horfu")]
 position = Vector2(2645, 3154)

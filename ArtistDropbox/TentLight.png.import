@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5623wvu7w45e"
-path="res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"
+uid="uid://ceybr33jf216r"
+path="res://.godot/imported/TentLight.png-e21ed50448964dffa166bb5541a10cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/OverworldAssets.png"
-dest_files=["res://.godot/imported/OverworldAssets.png-0252d00967ed9735357a81b1684ddf6d.ctex"]
+source_file="res://ArtistDropbox/TentLight.png"
+dest_files=["res://.godot/imported/TentLight.png-e21ed50448964dffa166bb5541a10cd1.ctex"]
 
 [params]
 

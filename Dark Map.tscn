@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://s4vtcsii50ev"]
 
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="1_qdo0t"]
-[ext_resource type="TileSet" uid="uid://cxj7d0q4t8qhg" path="res://Resources/goodtils.tres" id="2_gssuf"]
+[ext_resource type="TileSet" uid="uid://cx6kivyvfkqpd" path="res://Resources/goodtils.tres" id="2_gssuf"]
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="3_yva40"]
 [ext_resource type="PackedScene" uid="uid://dtpu257m6o73c" path="res://Replicatables/Clown.tscn" id="4_q7q32"]
 [ext_resource type="Texture2D" uid="uid://0w0rhhyux2fq" path="res://ArtistDropbox/FairGroundNight.png" id="5_rtn5s"]

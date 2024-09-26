@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fem2wca5lfgb"
-path="res://.godot/imported/QuitButtonOutline.png-dfd5ac6ecc45e7f3834628723201c7f3.ctex"
+uid="uid://bbm3oolk6yhbg"
+path="res://.godot/imported/Guy2.png-27689faddd37cff7ab2951f3b18917f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/QuitButtonOutline.png"
-dest_files=["res://.godot/imported/QuitButtonOutline.png-dfd5ac6ecc45e7f3834628723201c7f3.ctex"]
+source_file="res://ArtistDropbox/Guy2.png"
+dest_files=["res://.godot/imported/Guy2.png-27689faddd37cff7ab2951f3b18917f1.ctex"]
 
 [params]
 

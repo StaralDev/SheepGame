@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cixi1q8mhkjt4"]
+[gd_scene load_steps=8 format=4 uid="uid://cixi1q8mhkjt4"]
 
 [ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_ojl2g"]
 [ext_resource type="Texture2D" uid="uid://bkcw01rqwufpp" path="res://Sprites/Placeholder/icon.svg" id="2_c24ag"]
 [ext_resource type="TileSet" uid="uid://djsfjtl05w2rj" path="res://Resources/MainTileSet.tres" id="4_l4c8n"]
 [ext_resource type="PackedScene" uid="uid://btqgbfc6floqh" path="res://Replicatables/EnemySpawnPoint.tscn" id="5_fuh1h"]
+[ext_resource type="PackedScene" uid="uid://bqsp4r3jlvm6o" path="res://Replicatables/Clowns/RedClown.tscn" id="6_ixqy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsmf"]
 size = Vector2(128, 128)
@@ -46,3 +47,6 @@ position = Vector2(1553, -404)
 
 [node name="EnemySpawnPoint3" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1465, -868)
+
+[node name="RedClown" parent="." instance=ExtResource("6_ixqy6")]
+position = Vector2(252, 287)

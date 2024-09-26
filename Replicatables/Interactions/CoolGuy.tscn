@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8ikjkhqybyp5"]
 
 [ext_resource type="PackedScene" uid="uid://c6vy71h774ccl" path="res://Replicatables/Interaction.tscn" id="1_f6053"]
-[ext_resource type="Texture2D" uid="uid://cjt4q7tkh4rio" path="res://ArtistDropbox/BunnyCarnie.png" id="2_144mu"]
+[ext_resource type="Texture2D" uid="uid://cjt4q7tkh4rio" path="res://Sprites/Characters/BunnyCarnie.png" id="2_144mu"]
 [ext_resource type="Script" path="res://Scripts/CoolGuy.cs" id="2_sfm8n"]
 [ext_resource type="Texture2D" uid="uid://dv7x8ts1upled" path="res://ArtistDropbox/TextBox.png" id="4_lr242"]
 

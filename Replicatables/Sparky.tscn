@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_laicq"]
-size = Vector2(46.5217, 24.7826)
+size = Vector2(28.6957, 24.7826)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gub5"]
 size = Vector2(86, 135)
@@ -33,7 +33,7 @@ shape = SubResource("CircleShape2D_7gglk")
 debug_color = Color(5.43877e-06, 0.811091, 0.325465, 0.42)
 
 [node name="SheepCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 41)
+position = Vector2(-9.53674e-07, 41)
 scale = Vector2(2.3, 2.3)
 shape = SubResource("RectangleShape2D_laicq")
 

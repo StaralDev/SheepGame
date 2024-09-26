@@ -21,7 +21,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_trf3u")
 
 [node name="Sparky" parent="." instance=ExtResource("1_j1a7h")]
-position = Vector2(557, 744)
+position = Vector2(597, 670)
 CameraEnabled = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -31,7 +31,7 @@ position = Vector2(458, 256)
 polygon = PackedVector2Array(1005, 568, 1004, 320, 753, 320, 753, 286, 633, 286, 633, 384, 559, 319, 0, 319, 0, 568, 242, 568, 20, 719, -531, 860, -737, 476, -519, -288, 265, -256, 1467, -249, 1460, 830, 20, 719, 242, 568)
 
 [node name="SceneExit" parent="." instance=ExtResource("3_rxi35")]
-position = Vector2(1150, 457)
+position = Vector2(1073, 439)
 scale = Vector2(0.5, 0.5)
 
 [node name="CoolGuy" parent="." instance=ExtResource("4_nx8wg")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjt4q7tkh4rio"
-path="res://.godot/imported/BunnyCarnie.png-41696a4d2ed48b202a9ca39bee310f31.ctex"
+uid="uid://0mebwaer2d0s"
+path="res://.godot/imported/StageScare.png-0d414c19d076a9efbc755a728f5c4219.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/BunnyCarnie.png"
-dest_files=["res://.godot/imported/BunnyCarnie.png-41696a4d2ed48b202a9ca39bee310f31.ctex"]
+source_file="res://Sprites/Backgrounds/StageScare.png"
+dest_files=["res://.godot/imported/StageScare.png-0d414c19d076a9efbc755a728f5c4219.ctex"]
 
 [params]
 

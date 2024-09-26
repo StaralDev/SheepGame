@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckgqi47b4c6eh"]
+[gd_scene load_steps=8 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
 [ext_resource type="SpriteFrames" uid="uid://b627m7oheq7pp" path="res://Resources/SparkySpriteFrames.tres" id="2_4edu5"]
 [ext_resource type="PackedScene" uid="uid://03noon8ca5q0" path="res://Replicatables/Gui/PlayerGui.tscn" id="2_32mm5"]
+[ext_resource type="AudioStream" uid="uid://behe1fc65r55a" path="res://Sounds/HeartbeatSound.mp3" id="4_3uo5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
@@ -47,3 +48,7 @@ shape = SubResource("RectangleShape2D_8gub5")
 debug_color = Color(1, 0.00940566, 0.0359491, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HeartbeatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3uo5x")
+volume_db = 10.775

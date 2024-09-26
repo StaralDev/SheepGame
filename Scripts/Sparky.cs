@@ -10,6 +10,9 @@ public partial class Sparky : CharacterBody2D
 	[Export]
 	public bool CameraEnabled = true;
 
+	[Export]
+	public bool HeartbeatEnabled = false;
+
 	private Vector2 lastDirection;
 
 	private AnimatedSprite2D sprite;
@@ -25,6 +28,8 @@ public partial class Sparky : CharacterBody2D
 	private string animation;
 
 	private Global myGlobalObject;
+
+	private AudioStreamPlayer heartbeatSound;
 
 	public struct Persuance<T> {
 		public T Red;
@@ -172,6 +177,7 @@ public partial class Sparky : CharacterBody2D
 		sheepCollider = GetNode<CollisionShape2D>("SheepCollider");
 		sheepTouchbox = GetNode<Area2D>("SheepTouchbox");
 		sheepTouchboxCollider = sheepTouchbox.GetNode<CollisionShape2D>("CollisionShape2D");
+		heartbeatSound = GetNode<AudioStreamPlayer>("HeartbeatSound");
 
 		camera = GetNode<Camera2D>("Camera2D");
 
@@ -183,6 +189,11 @@ public partial class Sparky : CharacterBody2D
 		myGlobalObject = Overworld.GetGlobal(GetTree());
 		myGlobalObject.CreateBilboard(this, 0);
 		camera.Enabled = CameraEnabled;
+
+		if (HeartbeatEnabled)
+		{
+			heartbeatSound.Play();
+		}
     }
 
     public override void _PhysicsProcess(double delta)
@@ -191,8 +202,11 @@ public partial class Sparky : CharacterBody2D
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		lastDirection = lockDirection(direction);
-		float mod = Speed + (SpeedBoost * (speedModifier.Red + speedModifier.Yellow + speedModifier.Green + speedModifier.Blue));
+		float speedalpha = speedModifier.Red + speedModifier.Yellow + speedModifier.Green + speedModifier.Blue;
+		float mod = Speed + (SpeedBoost * speedalpha);
 		velocity = direction * mod;
+
+		heartbeatSound.VolumeDb = Mathf.Lerp(0, 15, speedalpha);
 
 		sprite.SpeedScale = mod/Speed;
 

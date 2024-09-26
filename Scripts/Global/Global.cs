@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Global : Godot.Node
+public partial class Global : Node2D
 {
 
     public struct Bilboard {

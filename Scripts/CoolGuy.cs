@@ -17,6 +17,7 @@ public partial class CoolGuy : Interaction
 		textboxSprite = GetNode<Sprite2D>("TextBox");
 
 		global.CreateBilboard(this, -50);
+
     }
 
     public override void _OnInteraction()

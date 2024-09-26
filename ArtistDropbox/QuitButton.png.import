@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjt4q7tkh4rio"
-path="res://.godot/imported/BunnyCarnie.png-41696a4d2ed48b202a9ca39bee310f31.ctex"
+uid="uid://cfnspkc4wtwri"
+path="res://.godot/imported/QuitButton.png-5e7688ca7cb39cdba92f7212517056b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/BunnyCarnie.png"
-dest_files=["res://.godot/imported/BunnyCarnie.png-41696a4d2ed48b202a9ca39bee310f31.ctex"]
+source_file="res://ArtistDropbox/QuitButton.png"
+dest_files=["res://.godot/imported/QuitButton.png-5e7688ca7cb39cdba92f7212517056b6.ctex"]
 
 [params]
 

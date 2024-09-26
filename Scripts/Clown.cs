@@ -88,6 +88,11 @@ public partial class Clown : Enemy
 
     public override void _Ready()
     {
+		CallDeferred(MethodName.startDefered);
+    }
+
+	private void startDefered()
+	{
 		transparencyDirection = 1;
 
 		MapSize = new Vector2(4400, 3500);
@@ -99,7 +104,6 @@ public partial class Clown : Enemy
 			ExclamationPoint.Visible = false;
 		};
 
-		spawnPoints = Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 		lastDirection = new Vector2(0, 1);
 
 		sprite.SpriteFrames = spriteFrames;
@@ -169,6 +173,7 @@ public partial class Clown : Enemy
 						transparencyDirection = 1;
 
 						currentSpeed = SearchSpeed;
+						spawnPoints ??= Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 						var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
 						Position = newSpawnPoint.Position;
 						navigationAgent.TargetPosition = new Vector2(
@@ -194,7 +199,7 @@ public partial class Clown : Enemy
 
 			lost = false;
 		};
-    }
+	}
 
     public override void _PhysicsProcess(double delta)
     {

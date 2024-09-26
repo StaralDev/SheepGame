@@ -98,12 +98,17 @@ public partial class Enemy : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+		sparky ??= Overworld.GetSparky(GetTree());
+
 		if (!allowProcess) { return; }
 
 		if (PathfindingEnable)
 		{
 			enemySightline.Position = Position;
-			enemySightline.TargetPosition = sparky.Position - Position;
+			if (sparky != null)
+			{
+				enemySightline.TargetPosition = sparky.Position - Position;
+			}
 
 			if (searching) 
 			{
@@ -121,9 +126,7 @@ public partial class Enemy : CharacterBody2D
 				}
 			}
 			else
-			{
-				sparky ??= Overworld.GetSparky(GetTree());
-				
+			{				
 				if (sparky == null) { return; }
 
 				bool canSeeSparky = !enemySightline.IsColliding();
@@ -163,7 +166,7 @@ public partial class Enemy : CharacterBody2D
 
     public override void _Process(double delta)
     {
-        
+        sparky ??= Overworld.GetSparky(GetTree());
     }
 
 	protected void timeout()

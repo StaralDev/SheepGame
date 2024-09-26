@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckgqi47b4c6eh"]
+[gd_scene load_steps=8 format=3 uid="uid://ckgqi47b4c6eh"]
 
 [ext_resource type="Script" path="res://Scripts/Sparky.cs" id="1_40s08"]
 [ext_resource type="SpriteFrames" uid="uid://b627m7oheq7pp" path="res://Resources/SparkySpriteFrames.tres" id="2_4edu5"]
+[ext_resource type="PackedScene" uid="uid://03noon8ca5q0" path="res://Replicatables/Gui/PlayerGui.tscn" id="2_32mm5"]
+[ext_resource type="AudioStream" uid="uid://behe1fc65r55a" path="res://Sounds/HeartbeatSound.mp3" id="4_3uo5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gglk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_laicq"]
-size = Vector2(58.2609, 59.1304)
+size = Vector2(28.6957, 24.7826)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gub5"]
 size = Vector2(86, 135)
@@ -14,13 +16,15 @@ size = Vector2(86, 135)
 [node name="Sparky" type="CharacterBody2D"]
 script = ExtResource("1_40s08")
 
+[node name="PlayerGui" parent="." instance=ExtResource("2_32mm5")]
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("2_4edu5")
-animation = &"WalkDown"
+animation = &"WalkRight"
 frame = 2
-frame_progress = 0.571273
+frame_progress = 0.0334198
 
 [node name="SheepHitbox" type="Area2D" parent="."]
 
@@ -30,7 +34,7 @@ shape = SubResource("CircleShape2D_7gglk")
 debug_color = Color(5.43877e-06, 0.811091, 0.325465, 0.42)
 
 [node name="SheepCollider" type="CollisionShape2D" parent="."]
-position = Vector2(-3.8147e-06, 1)
+position = Vector2(-9.53674e-07, 41)
 scale = Vector2(2.3, 2.3)
 shape = SubResource("RectangleShape2D_laicq")
 
@@ -44,3 +48,7 @@ shape = SubResource("RectangleShape2D_8gub5")
 debug_color = Color(1, 0.00940566, 0.0359491, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HeartbeatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3uo5x")
+volume_db = 10.775

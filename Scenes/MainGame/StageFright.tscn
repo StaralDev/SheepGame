@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b22u1t13cbvvq"]
+
+[ext_resource type="Script" path="res://Scripts/StageFrightScene.cs" id="1_7nfs7"]
+[ext_resource type="Texture2D" uid="uid://0mebwaer2d0s" path="res://Sprites/Backgrounds/StageScare.png" id="1_334jm"]
+
+[node name="StageFright" type="Node2D"]
+script = ExtResource("1_7nfs7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -152.0
+offset_top = -100.0
+offset_right = 2040.0
+offset_bottom = 1317.0
+color = Color(0, 0, 0, 1)
+
+[node name="StageScare" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(960, 505)
+scale = Vector2(6, 6)
+texture = ExtResource("1_334jm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.3
+one_shot = true
+
+[node name="MoveOn" type="Timer" parent="."]
+wait_time = 2.6
+one_shot = true

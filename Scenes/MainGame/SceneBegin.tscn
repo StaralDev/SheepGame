@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjcjhe7hw4tfy"]
+
+[ext_resource type="PackedScene" uid="uid://ckgqi47b4c6eh" path="res://Replicatables/Sparky.tscn" id="1_j1a7h"]
+[ext_resource type="Texture2D" uid="uid://c7k5jcxjgdqng" path="res://Sprites/Backgrounds/FirstScreen.png" id="1_trf3u"]
+[ext_resource type="PackedScene" uid="uid://bkoyaavgtxa1h" path="res://Replicatables/Interactions/SceneExit.tscn" id="3_rxi35"]
+[ext_resource type="PackedScene" uid="uid://b8ikjkhqybyp5" path="res://Replicatables/Interactions/CoolGuy.tscn" id="4_nx8wg"]
+
+[node name="SceneBegin" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -152.0
+offset_top = -100.0
+offset_right = 2040.0
+offset_bottom = 1317.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("1_trf3u")
+
+[node name="Sparky" parent="." instance=ExtResource("1_j1a7h")]
+position = Vector2(597, 670)
+CameraEnabled = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(458, 256)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1005, 568, 1004, 320, 753, 320, 753, 286, 633, 286, 633, 384, 559, 319, 0, 319, 0, 568, 242, 568, 20, 719, -531, 860, -737, 476, -519, -288, 265, -256, 1467, -249, 1460, 830, 20, 719, 242, 568)
+
+[node name="SceneExit" parent="." instance=ExtResource("3_rxi35")]
+position = Vector2(1073, 439)
+scale = Vector2(0.5, 0.5)
+
+[node name="CoolGuy" parent="." instance=ExtResource("4_nx8wg")]
+position = Vector2(883, 620)

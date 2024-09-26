@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Global : Godot.Node
+public partial class Global : Node2D
 {
 
     public struct Bilboard {
@@ -15,14 +15,28 @@ public partial class Global : Godot.Node
     private List<Bilboard> Bilboards = new();
     private List<Node2D> Overlays = new();
 
+    public struct PasifiedData {
+        public bool Red;
+        public bool Yellow;
+        public bool Green;
+        public bool Blue;
+    }
+
     public struct PlayerData {
         public int Health;
         public Balloons? currentBalloon;
+        public PasifiedData pasifiedData;
     }
 
     public PlayerData myData = new PlayerData{
         Health = 3,
         currentBalloon = null,
+        pasifiedData = new PasifiedData{
+            Red = false,
+            Green = false,
+            Yellow = false,
+            Blue = false
+        }
     };
 
     public void CreateBilboard(Node2D node, float overlapOffset)
@@ -36,6 +50,11 @@ public partial class Global : Godot.Node
     public void CreateBilboard(Bilboard bilboard)
     {
         Bilboards.Add(bilboard);
+    }
+
+    public void ClearBilboards()
+    {
+        Bilboards.Clear();
     }
 
     public void AddOverlay(Node2D node)
@@ -52,6 +71,8 @@ public partial class Global : Godot.Node
     {
         SceneTree tree = GetTree();
         tree.CurrentScene.QueueFree();
+
+        ClearBilboards();
 
         var newScene = Overworld.InstantiateScene(packedScene);
         tree.Root.AddChild(newScene);
@@ -80,7 +101,14 @@ public partial class Global : Godot.Node
             return 0;
         }
 
-        return (a.node.Position.Y + a.overlapOffset).CompareTo(b.node.Position.Y + b.overlapOffset);
+        try
+        {
+            return (a.node.Position.Y + a.overlapOffset).CompareTo(b.node.Position.Y + b.overlapOffset);
+        } 
+        catch
+        {
+            return 0;
+        }
     }
 
     public override void _Process(double delta)

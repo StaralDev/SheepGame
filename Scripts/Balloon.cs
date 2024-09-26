@@ -61,6 +61,7 @@ public partial class Balloon : Interaction
             EnableInteraction = false;
 			myGlobalObject.myData.currentBalloon = getEnumFromBalloonColor(BalloonColor);
             sprite.Visible = false;
+            sparky.UpdateBalloon();
 		}
     }
 

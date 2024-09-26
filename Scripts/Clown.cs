@@ -10,6 +10,14 @@ public partial class Clown : Enemy
 	[Export]
 	public bool Pacified { get; set; } = false;
 
+	[Export]
+	public bool FlipX = false;
+	[Export]
+	public bool DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing = false;
+
+	[Export]
+	public Texture2D JumpscareImage;
+
 	private Vector2 lastDirection;
 	private string animation = "WalkUp";
 
@@ -80,6 +88,11 @@ public partial class Clown : Enemy
 
     public override void _Ready()
     {
+		CallDeferred(MethodName.startDefered);
+    }
+
+	private void startDefered()
+	{
 		transparencyDirection = 1;
 
 		MapSize = new Vector2(4400, 3500);
@@ -91,7 +104,6 @@ public partial class Clown : Enemy
 			ExclamationPoint.Visible = false;
 		};
 
-		spawnPoints = Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 		lastDirection = new Vector2(0, 1);
 
 		sprite.SpriteFrames = spriteFrames;
@@ -109,6 +121,34 @@ public partial class Clown : Enemy
 				{
 					Pacified = true;
 					globalObject.myData.currentBalloon = null;
+					sparky.UpdateBalloon();
+
+					if (ColorName == "Red")
+					{
+						globalObject.myData.pasifiedData.Red = true;
+					}
+					else if (ColorName == "Yellow")
+					{
+						globalObject.myData.pasifiedData.Yellow = true;
+					}
+					else if (ColorName == "Green")
+					{
+						globalObject.myData.pasifiedData.Green = true;
+					}
+					else if (ColorName == "Blue")
+					{
+						globalObject.myData.pasifiedData.Blue = true;
+					}
+
+					if (
+						globalObject.myData.pasifiedData.Blue &&
+						globalObject.myData.pasifiedData.Red &&
+						globalObject.myData.pasifiedData.Green &&
+						globalObject.myData.pasifiedData.Yellow
+					)
+					{
+						Overworld.ChangeScene("res://Scenes/WinScene.tscn", GetTree());
+					}
 					
 					sparky.Persue(ColorName, false);
 
@@ -118,9 +158,11 @@ public partial class Clown : Enemy
 				{
 					JumpscareGui jumpscareGui = Overworld.InstantiateScene("res://Replicatables/Gui/JumpscareGui.tscn") as JumpscareGui;
 					jumpscareGui.Speed = 0.2f;
-					AddChild(jumpscareGui);
+					globalObject.AddChild(jumpscareGui);
+					jumpscareGui.CenterImage.Texture = JumpscareImage;
 
 					globalObject.myData.Health -= 1;
+					sparky.UpdateHealth();
 					if (globalObject.myData.Health <= 0)
 					{
 						Overworld.ChangeScene("res://Scenes/DeathScene.tscn", GetTree());
@@ -131,6 +173,7 @@ public partial class Clown : Enemy
 						transparencyDirection = 1;
 
 						currentSpeed = SearchSpeed;
+						spawnPoints ??= Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 						var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
 						Position = newSpawnPoint.Position;
 						navigationAgent.TargetPosition = new Vector2(
@@ -156,7 +199,7 @@ public partial class Clown : Enemy
 
 			lost = false;
 		};
-    }
+	}
 
     public override void _PhysicsProcess(double delta)
     {
@@ -217,6 +260,32 @@ public partial class Clown : Enemy
 		sprite.Animation = animation;
 
 		bool spritePlaying = sprite.IsPlaying();
+
+		// Like and share if you hate magnus
+		if (FlipX) {
+			if (DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing)
+			{
+				if (lastDirection.X == -1)
+				{
+					sprite.Scale = new Vector2(-4, 4);
+				}
+				else
+				{
+					sprite.Scale = new Vector2(4, 4);
+				}
+			}
+			else
+			{
+				if (lastDirection.X == 1)
+				{
+					sprite.Scale = new Vector2(-4, 4);
+				}
+				else
+				{
+					sprite.Scale = new Vector2(4, 4);
+				}
+			}
+		}
 
 		if (Pacified)
 		{

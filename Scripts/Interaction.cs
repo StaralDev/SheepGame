@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel.Design;
 
 public partial class Interaction : Area2D
 {
@@ -14,6 +15,8 @@ public partial class Interaction : Area2D
 	protected bool EnableInteractionInternal = true;
 
 	public virtual void _OnInteraction() {}
+	public virtual void _OnSparkyEntered(Sparky character) {}
+	public virtual void _OnSparkyExited(Sparky character) {}
 
 	private void updateSparkyInArea(Area2D area, bool enable)
 	{
@@ -22,10 +25,15 @@ public partial class Interaction : Area2D
 		{
 			if (enable) {
 				sparky = parent as Sparky;
+				_OnSparkyEntered(sparky);
 			}
 			else
 			{
-				sparky = null;
+				if (sparky != null)
+				{
+					_OnSparkyExited(sparky);
+					sparky = null;
+				}
 			}
 
 			SparkyInArea = enable;

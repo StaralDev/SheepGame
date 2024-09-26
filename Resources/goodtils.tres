@@ -1,12 +1,12 @@
-[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://3srs53f8gfxv"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://cx6kivyvfkqpd"]
 
 [ext_resource type="Texture2D" uid="uid://b64ia0cwukmot" path="res://ArtistDropbox/AssetsBetter.png" id="1_if3oi"]
-[ext_resource type="Texture2D" uid="uid://bb3rc27k1sfb8" path="res://ArtistDropbox/FixedTent.png" id="2_fhau7"]
+[ext_resource type="Texture2D" uid="uid://c0g13x1i5g6fg" path="res://ArtistDropbox/FixedTent.png" id="2_fhau7"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ywipp"]
-vertices = PackedVector2Array(9, 9, -9, 9, -9, -9, 9, -9)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_m0tns"]
+vertices = PackedVector2Array(8.6875, 37.125, -10.6875, 37.125, -9.9375, 18.5, 8.4375, 18.375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9.9375, 18.5, 8.4375, 18.375, 8.6875, 37.125, -10.6875, 37.125)])
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vlgl6"]
@@ -99,13 +99,11 @@ texture_region_size = Vector2i(69, 78)
 0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/1 = 1
-0:0/1/texture_origin = Vector2i(0, 27)
-0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
-0:0/1/navigation_layer_0/polygon = SubResource("NavigationPolygon_ywipp")
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-9.8125, 17.875, 8.6875, 17.75, 8.0625, 37, -10.0625, 36.125)
+0:0/1/navigation_layer_0/polygon = SubResource("NavigationPolygon_m0tns")
 1:0/next_alternative_id = 2
 1:0/0 = 0
 1:0/1 = 1
-1:0/1/texture_origin = Vector2i(0, 27)
 1:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-9.8125, 17.875, 8.6875, 17.75, 8.0625, 37, -10.0625, 36.125)
 1:0/1/navigation_layer_0/polygon = SubResource("NavigationPolygon_6hvpl")
 2:0/next_alternative_id = 2

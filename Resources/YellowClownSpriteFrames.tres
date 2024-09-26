@@ -76,6 +76,7 @@ atlas = ExtResource("1_2nvl7")
 region = Rect2(59, 39, 29, 38)
 
 [resource]
+resource_name = "res://Sprites/Clowns/YellowClownJumpScare.png"
 animations = [{
 "frames": [{
 "duration": 6.0,

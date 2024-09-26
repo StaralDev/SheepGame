@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://pyy57teew5vj"]
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://pyy57teew5vj"]
 
 [ext_resource type="Texture2D" uid="uid://6xu4grw28a8x" path="res://Sprites/Clowns/RedClownBad.png" id="1_ijxsd"]
 [ext_resource type="Texture2D" uid="uid://bt6cyoxjpo4wx" path="res://Sprites/Clowns/RedClownNice.png" id="1_p4iec"]
+[ext_resource type="Texture2D" uid="uid://tsab1qvffcky" path="res://Sprites/Clowns/RedClownEvilBetter.png" id="3_04ynw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbqpq"]
 atlas = ExtResource("1_ijxsd")
@@ -35,47 +36,40 @@ region = Rect2(50, 0, 25, 38)
 atlas = ExtResource("1_ijxsd")
 region = Rect2(75, 0, 25, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0otm"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(23, 76, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p43ij"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(0, 72, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_klj6x"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(46, 76, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly2vl"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(24, 72, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wm7b8"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(69, 76, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v31u0"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(48, 72, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4q5d"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(50, 114, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffxny"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(72, 72, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tlro"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(27, 114, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_holxs"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(0, 36, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6tsv"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(4, 114, 23, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tffpq"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(24, 36, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2cw6"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(0, 38, 25, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5rg6"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(48, 36, 24, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xt5eh"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(25, 38, 25, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eriic"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(50, 38, 25, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2mjxv"]
-atlas = ExtResource("1_ijxsd")
-region = Rect2(75, 38, 25, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsmdc"]
+atlas = ExtResource("3_04ynw")
+region = Rect2(72, 36, 24, 36)
 
 [resource]
+resource_name = "res://Sprites/Clowns/RedClownJumpScare.png"
 animations = [{
 "frames": [{
 "duration": 8.0,
@@ -121,16 +115,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d4h5g")
+"texture": SubResource("AtlasTexture_p43ij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h0otm")
+"texture": SubResource("AtlasTexture_ly2vl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_klj6x")
+"texture": SubResource("AtlasTexture_v31u0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wm7b8")
+"texture": SubResource("AtlasTexture_ffxny")
 }],
 "loop": true,
 "name": &"WalkLeft",
@@ -138,16 +132,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jnfxi")
+"texture": SubResource("AtlasTexture_p43ij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s4q5d")
+"texture": SubResource("AtlasTexture_ly2vl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6tlro")
+"texture": SubResource("AtlasTexture_v31u0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c6tsv")
+"texture": SubResource("AtlasTexture_ffxny")
 }],
 "loop": true,
 "name": &"WalkRight",
@@ -155,16 +149,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s2cw6")
+"texture": SubResource("AtlasTexture_holxs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xt5eh")
+"texture": SubResource("AtlasTexture_tffpq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eriic")
+"texture": SubResource("AtlasTexture_h5rg6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2mjxv")
+"texture": SubResource("AtlasTexture_hsmdc")
 }],
 "loop": true,
 "name": &"WalkUp",

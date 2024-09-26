@@ -95,8 +95,8 @@ public partial class Clown : Enemy
 	{
 		transparencyDirection = 1;
 
-		MapSize = new Vector2(4400, 3500);
-		MapCenter = Vector2.Zero;
+		MapSize = new Vector2(804*8, 552*8);
+		MapCenter = new Vector2(2574, 3425);
 
         base._Ready();
 
@@ -257,7 +257,10 @@ public partial class Clown : Enemy
 		}
 
 		animation = GetAnimationFromDirection(lastDirection);
-		sprite.Animation = animation;
+		if (animation != null)
+		{
+			sprite.Animation = animation;
+		}
 
 		bool spritePlaying = sprite.IsPlaying();
 

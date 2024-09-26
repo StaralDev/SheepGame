@@ -1,24 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://wxfc7xl6mb3k"]
+[gd_scene load_steps=5 format=3 uid="uid://bofwpy6obyujv"]
 
 [ext_resource type="Script" path="res://TitleScreen.cs" id="1_oe2vy"]
-[ext_resource type="Texture2D" uid="uid://2v65wp0dpmeo" path="res://ArtistDropbox/booth Canival placeholder.png" id="2_5ag8k"]
-[ext_resource type="Texture2D" uid="uid://bdtyaydq3fanf" path="res://ArtistDropbox/Canival boothplaceholder.png" id="3_6tmgw"]
-[ext_resource type="Texture2D" uid="uid://cuqdvb4s2ppg6" path="res://ArtistDropbox/Hay bail floor.png" id="4_vrrh8"]
+[ext_resource type="Texture2D" uid="uid://dhtmuu3umc005" path="res://ArtistDropbox/PlayButtonOutline.png" id="2_sdofl"]
+[ext_resource type="Texture2D" uid="uid://cfnspkc4wtwri" path="res://ArtistDropbox/QuitButton.png" id="3_uyaye"]
+[ext_resource type="Texture2D" uid="uid://b0rg70kilwxs0" path="res://ArtistDropbox/StartScreen.png" id="4_3gf48"]
 
 [node name="titleScreen" type="Node2D"]
 script = ExtResource("1_oe2vy")
 
-[node name="Button" type="Sprite2D" parent="."]
-position = Vector2(824, 264)
-scale = Vector2(29.5, 16)
-texture = ExtResource("2_5ag8k")
+[node name="startbutton" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(680, 848)
+scale = Vector2(12, 12)
+texture = ExtResource("2_sdofl")
 
-[node name="Button2" type="Sprite2D" parent="."]
-position = Vector2(840, 832)
-scale = Vector2(27.5, 13)
-texture = ExtResource("3_6tmgw")
+[node name="exitbutton" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1288, 848)
+scale = Vector2(13, 13)
+texture = ExtResource("3_uyaye")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(232, 240)
-scale = Vector2(3.25, 4.5)
-texture = ExtResource("4_vrrh8")
+[node name="StartScreen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(992, 544)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("4_3gf48")

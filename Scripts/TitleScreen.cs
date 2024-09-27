@@ -4,13 +4,18 @@ using System;
 
 public partial class TitleScreen : Node2D
 {
+	public Sprite2D startButton;
+	public Sprite2D exitButton;
 	public PackedScene simultaneousScene;
 	public int selected = 1;
 
     public override void _Ready()
     {
         var global = Overworld.GetGlobal(GetTree());
-		simultaneousScene = ResourceLoader.Load<PackedScene>("res://Scenes/map.tscn");
+		simultaneousScene = ResourceLoader.Load<PackedScene>("res://Scenes/TestScene.tscn");
+
+		startButton = GetNode<Sprite2D>("startbutton");
+		exitButton = GetNode<Sprite2D>("exitbutton");
     }
 
     public void play()
@@ -18,8 +23,9 @@ public partial class TitleScreen : Node2D
 		if (selected == 1)
 		{
 			var global = Overworld.GetGlobal(GetTree());
-			simultaneousScene = ResourceLoader.Load<PackedScene>("res://Scenes/map.tscn");
+			simultaneousScene = ResourceLoader.Load<PackedScene>("res://Scenes/TestScene.tscn");
 			global.SetScene(simultaneousScene);
+			return;
 		}
 		else if (selected == 2);
 		{
@@ -32,18 +38,19 @@ public partial class TitleScreen : Node2D
 	{
 		if (Input.IsActionPressed("sg_interact"))
 		{
-			GD.Print("Helo");
 			play();
 		}
-		if (Input.IsActionPressed("sg_up"))
+		if (Input.IsActionJustPressed("sg_up"))
 		{
 			selected = 1;
-			GD.Print(selected);
+			startButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/PlayButtonOutline.png");
+			exitButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/QuitButton.png");
 		}
-		else if (Input.IsActionPressed("sg_down"))
+		else if (Input.IsActionJustPressed("sg_down"))
 		{
 			selected = 2;
-			GD.Print(selected);
+			startButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/PlayButton.png");
+			exitButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/QuitButtonOutline.png");
 		}
 	}
 }

@@ -76,12 +76,16 @@ position = Vector2(904, 3552)
 
 [node name="RedClown" parent="." instance=ExtResource("6_ubie8")]
 position = Vector2(3939, 4215)
+collision_mask = 1
 
 [node name="BlueClown" parent="." instance=ExtResource("7_oc78s")]
 position = Vector2(4569, 1994)
+collision_mask = 1
 
 [node name="YellowClown" parent="." instance=ExtResource("8_q1mdm")]
 position = Vector2(-22, 4003)
+collision_mask = 1
 
 [node name="GreenClown" parent="." instance=ExtResource("9_nkrb3")]
 position = Vector2(846, 2070)
+collision_mask = 1

@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://csirvq1ao5tpa"]
+[gd_scene load_steps=4 format=3 uid="uid://csirvq1ao5tpa"]
 
 [ext_resource type="PackedScene" uid="uid://bmqrhytswi27i" path="res://Replicatables/Balloon.tscn" id="1_kypjk"]
 [ext_resource type="Texture2D" uid="uid://xkqaf0s64bab" path="res://Sprites/Balloons/Yellow Bollon.png" id="2_8psw1"]
+[ext_resource type="Texture2D" uid="uid://cfuovvtuga2fc" path="res://ArtistDropbox/InteractText.png" id="3_jqnsx"]
 
 [node name="YellowBalloon" instance=ExtResource("1_kypjk")]
 BalloonColor = "Yellow"
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_8psw1")
+
+[node name="PressZprompt" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("3_jqnsx")
+
+[connection signal="area_entered" from="." to="." method="InteractEntered"]
+[connection signal="area_exited" from="." to="." method="InteractExited"]

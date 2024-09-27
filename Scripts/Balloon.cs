@@ -65,7 +65,7 @@ public partial class Balloon : Interaction
             EnableInteraction = false;
 			myGlobalObject.myData.currentBalloon = getEnumFromBalloonColor(BalloonColor);
             sparky.UpdateBalloon();
-            QueueFree();
+            this.Visible = false;
 		}
     }
 
@@ -83,7 +83,10 @@ public partial class Balloon : Interaction
 
     public void InteractEntered(Area2D area)
     {
-        interactText.Visible = true;
+        if (this.Visible == true)
+        {
+            interactText.Visible = true;
+        }
     }
     public void InteractExited(Area2D area)
     {

@@ -18,8 +18,10 @@ public partial class Balloon : Interaction
     public float BalloonWindSpeed { get; set; } = 3f;
 
     protected Sprite2D sprite;
+    protected Sprite2D interactText;
 
 	private Global myGlobalObject;
+
     
 
     public override void _Ready()
@@ -28,6 +30,8 @@ public partial class Balloon : Interaction
 
 		myGlobalObject = Overworld.GetGlobal(GetTree());
         sprite = GetNode<Sprite2D>("Sprite2D");
+        interactText = GetNode<Sprite2D>("PressZprompt");
+        interactText.Visible = false;
 
         myGlobalObject.CreateBilboard(this, 25);
     }
@@ -60,8 +64,8 @@ public partial class Balloon : Interaction
 		{
             EnableInteraction = false;
 			myGlobalObject.myData.currentBalloon = getEnumFromBalloonColor(BalloonColor);
-            sprite.Visible = false;
             sparky.UpdateBalloon();
+            QueueFree();
 		}
     }
 
@@ -75,5 +79,14 @@ public partial class Balloon : Interaction
             (Mathf.Sin(time * BalloonSwaySpeed) * 24) + (Mathf.Sin(time * BalloonWindSpeed) * 1f),
             Mathf.Round(Mathf.Sin(time * BalloonFloatSpeed) * 16 / 4) * 4
         );
+    }
+
+    public void InteractEntered(Area2D area)
+    {
+        interactText.Visible = true;
+    }
+    public void InteractExited(Area2D area)
+    {
+        interactText.Visible = false;
     }
 }

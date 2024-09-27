@@ -40,13 +40,13 @@ public partial class TitleScreen : Node2D
 		{
 			play();
 		}
-		if (Input.IsActionJustPressed("sg_up"))
+		if (Input.IsActionJustPressed("ui_left"))
 		{
 			selected = 1;
 			startButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/PlayButtonOutline.png");
 			exitButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/QuitButton.png");
 		}
-		else if (Input.IsActionJustPressed("sg_down"))
+		else if (Input.IsActionJustPressed("ui_right"))
 		{
 			selected = 2;
 			startButton.Texture = GD.Load<Texture2D>("res://ArtistDropbox/PlayButton.png");

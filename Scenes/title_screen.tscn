@@ -1,70 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://o5pdr3ld6oli"]
 
+[ext_resource type="Script" path="res://TitleScreen.cs" id="1_628dx"]
 [ext_resource type="Texture2D" uid="uid://cpxo1lihc7l83" path="res://ArtistDropbox/PlayButtonOutline.png" id="2_t8l1j"]
 [ext_resource type="Texture2D" uid="uid://7kdi6kdijr7m" path="res://ArtistDropbox/QuitButton.png" id="3_8tsp4"]
 [ext_resource type="Texture2D" uid="uid://bv8oeplg4ysrh" path="res://ArtistDropbox/StartScreen.png" id="4_0n0fr"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_fgryx"]
-script/source = "using Godot;
-using SheepGame;
-using System;
-
-public partial class TitleScreen : Node2D
-{
-	public Sprite2D startButton;
-	public Sprite2D exitButton;
-	public PackedScene simultaneousScene;
-	public int selected = 1;
-
-    public override void _Ready()
-    {
-        var global = Overworld.GetGlobal(GetTree());
-		simultaneousScene = ResourceLoader.Load<PackedScene>(\"res://Scenes/TestScene.tscn\");
-
-		startButton = GetNode<Sprite2D>(\"startbutton\");
-		exitButton = GetNode<Sprite2D>(\"exitbutton\");
-    }
-
-    public void play()
-	{
-		if (selected == 1)
-		{
-			var global = Overworld.GetGlobal(GetTree());
-			simultaneousScene = ResourceLoader.Load<PackedScene>(\"res://Scenes/TestScene.tscn\");
-			global.SetScene(simultaneousScene);
-			return;
-		}
-		else if (selected == 2);
-		{
-			GetTree().Quit();
-		}
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		if (Input.IsActionPressed(\"sg_interact\"))
-		{
-			play();
-		}
-		if (Input.IsActionJustPressed(\"sg_up\"))
-		{
-			selected = 1;
-			startButton.Texture = GD.Load<Texture2D>(\"res://ArtistDropbox/PlayButtonOutline.png\");
-			exitButton.Texture = GD.Load<Texture2D>(\"res://ArtistDropbox/QuitButton.png\");
-		}
-		else if (Input.IsActionJustPressed(\"sg_down\"))
-		{
-			selected = 2;
-			startButton.Texture = GD.Load<Texture2D>(\"res://ArtistDropbox/PlayButton.png\");
-			exitButton.Texture = GD.Load<Texture2D>(\"res://ArtistDropbox/QuitButtonOutline.png\");
-		}
-	}
-}
-"
-
 [node name="titleScreen" type="Node2D"]
-script = SubResource("CSharpScript_fgryx")
+script = ExtResource("1_628dx")
 
 [node name="startbutton" type="Sprite2D" parent="."]
 texture_filter = 1

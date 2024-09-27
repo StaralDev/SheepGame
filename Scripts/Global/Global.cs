@@ -113,6 +113,12 @@ public partial class Global : Node2D
 
     public override void _Process(double delta)
     {
+        if (Input.IsActionJustReleased("sg_quit"))
+        {
+            GetTree().Quit();
+        }
+
+
         Bilboards.Sort(CompareBilboards);
 
         foreach (Bilboard bilboard in Bilboards) {

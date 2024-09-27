@@ -192,7 +192,7 @@ public partial class Sparky : CharacterBody2D
 
 		if (HeartbeatEnabled)
 		{
-			heartbeatSound.Play();
+			//heartbeatSound.Play();
 		}
     }
 

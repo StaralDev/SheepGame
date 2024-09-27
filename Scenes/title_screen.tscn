@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://copio4yg4l8f3"]
+[gd_scene load_steps=6 format=3 uid="uid://copio4yg4l8f3"]
 
 [ext_resource type="Script" path="res://TitleScreen.cs" id="1_n7j5g"]
 [ext_resource type="Texture2D" uid="uid://cpxo1lihc7l83" path="res://ArtistDropbox/PlayButtonOutline.png" id="2_t8l1j"]
 [ext_resource type="Texture2D" uid="uid://7kdi6kdijr7m" path="res://ArtistDropbox/QuitButton.png" id="3_8tsp4"]
 [ext_resource type="Texture2D" uid="uid://bv8oeplg4ysrh" path="res://ArtistDropbox/StartScreen.png" id="4_0n0fr"]
+[ext_resource type="FontFile" uid="uid://daybvji4bk2o1" path="res://Fonts/DTM-Sans.otf" id="5_yrohc"]
 
 [node name="titleScreen" type="Node2D"]
 script = ExtResource("1_n7j5g")
@@ -34,3 +35,15 @@ texture_filter = 1
 position = Vector2(1259, 846)
 scale = Vector2(13, 13)
 texture = ExtResource("3_8tsp4")
+
+[node name="GoBackText" type="Label" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 488.0
+offset_right = 1931.0
+offset_bottom = 1569.0
+theme_override_fonts/font = ExtResource("5_yrohc")
+theme_override_font_sizes/font_size = 48
+text = "Movement: Arrow Keys
+Interact: Z"
+vertical_alignment = 1

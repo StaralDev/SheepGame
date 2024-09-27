@@ -40,7 +40,7 @@ offset_right = 1929.0
 offset_bottom = 1593.0
 theme_override_fonts/font = ExtResource("3_mtdcf")
 theme_override_font_sizes/font_size = 48
-text = "Press [X] to skip credits..."
+text = "Press [Z] to skip credits..."
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -24,8 +24,8 @@ public partial class StageFrightScene : Node2D
 		moveon = GetNode<Timer>("MoveOn");
 		moveon.Timeout += () => {
 			var SceneTransition = Overworld.InstantiateScene("res://Replicatables/SceneTransition.tscn") as SceneTransition;
-			SceneTransition.NewScene = "res://Scenes/MapMain.tscn"; //"res://Scenes/map.tscn";
-			SceneTransition.TransitionTime = 4.0f;
+			SceneTransition.NewScene = "res://Scenes/intructions.tscn";
+			SceneTransition.TransitionTime = 2.0f;
 
 			global.AddChild(SceneTransition);
 		};

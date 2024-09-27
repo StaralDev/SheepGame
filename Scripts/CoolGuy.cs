@@ -17,6 +17,7 @@ public partial class CoolGuy : Interaction
 		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		textboxSprite = GetNode<Sprite2D>("TextBox");
 		interact = GetNode<Sprite2D>("InteractText");
+		interact.Visible = false;
 
 		global.CreateBilboard(this, -50);
 
@@ -41,11 +42,11 @@ public partial class CoolGuy : Interaction
 		}
     }
 
-	public void InteactEnter()
+	public void InteractEnter(Area2D area)
 	{
 		interact.Visible = true;
 	}
-	public void InteractExit()
+	public void InteractExit(Area2D area)
 	{
 		interact.Visible = false;
 	}

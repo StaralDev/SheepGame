@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://vy8l5ivul6r4"]
+[gd_scene load_steps=3 format=3 uid="uid://vy8l5ivul6r4"]
 
 [ext_resource type="PackedScene" uid="uid://bmqrhytswi27i" path="res://Replicatables/Balloon.tscn" id="1_1gwgb"]
+[ext_resource type="Texture2D" uid="uid://cfuovvtuga2fc" path="res://ArtistDropbox/InteractText.png" id="2_sjcwa"]
 
 [node name="RedBalloon" instance=ExtResource("1_1gwgb")]
+
+[node name="PressZprompt" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("2_sjcwa")
+
+[connection signal="area_entered" from="." to="." method="InteractEntered"]
+[connection signal="area_exited" from="." to="." method="InteractExited"]

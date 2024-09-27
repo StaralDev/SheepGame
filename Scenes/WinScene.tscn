@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca8avkajp67h2"]
+[gd_scene load_steps=4 format=3 uid="uid://ca8avkajp67h2"]
 
 [ext_resource type="Script" path="res://Scripts/WinScene.cs" id="1_a8i1d"]
 [ext_resource type="Texture2D" uid="uid://cufjk16dbeyxo" path="res://Sprites/Backgrounds/WinScreen.png" id="1_de8cw"]
+[ext_resource type="FontFile" uid="uid://daybvji4bk2o1" path="res://Fonts/DTM-Sans.otf" id="3_mtdcf"]
 
 [node name="WinScene" type="Node2D"]
 script = ExtResource("1_a8i1d")
@@ -21,7 +22,27 @@ texture = ExtResource("1_de8cw")
 
 [node name="Label" type="Label" parent="."]
 visible = false
+texture_filter = 1
 offset_right = 1928.0
 offset_bottom = 1081.0
-theme_override_font_sizes/font_size = 300
-text = "You win!1"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_mtdcf")
+theme_override_font_sizes/font_size = 124
+text = "hello world"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoBackText" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 512.0
+offset_right = 1929.0
+offset_bottom = 1593.0
+theme_override_fonts/font = ExtResource("3_mtdcf")
+theme_override_font_sizes/font_size = 48
+text = "Press [X] to skip credits..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeTextTimer" type="Timer" parent="."]
+wait_time = 2.0

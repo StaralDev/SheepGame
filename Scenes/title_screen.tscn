@@ -1,27 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://o5pdr3ld6oli"]
+[gd_scene load_steps=5 format=3 uid="uid://copio4yg4l8f3"]
 
-[ext_resource type="Script" path="res://TitleScreen.cs" id="1_628dx"]
+[ext_resource type="Script" path="res://TitleScreen.cs" id="1_n7j5g"]
 [ext_resource type="Texture2D" uid="uid://cpxo1lihc7l83" path="res://ArtistDropbox/PlayButtonOutline.png" id="2_t8l1j"]
 [ext_resource type="Texture2D" uid="uid://7kdi6kdijr7m" path="res://ArtistDropbox/QuitButton.png" id="3_8tsp4"]
 [ext_resource type="Texture2D" uid="uid://bv8oeplg4ysrh" path="res://ArtistDropbox/StartScreen.png" id="4_0n0fr"]
 
 [node name="titleScreen" type="Node2D"]
-script = ExtResource("1_628dx")
+script = ExtResource("1_n7j5g")
+
+[node name="StartScreen2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(1029.33, 572)
+scale = Vector2(10.3229, 10.3229)
+texture = ExtResource("4_0n0fr")
+
+[node name="StartScreen" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(960, 544)
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("4_0n0fr")
 
 [node name="startbutton" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(680, 848)
+position = Vector2(651, 846)
 scale = Vector2(12, 12)
 texture = ExtResource("2_t8l1j")
 
 [node name="exitbutton" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1288, 848)
+position = Vector2(1259, 846)
 scale = Vector2(13, 13)
 texture = ExtResource("3_8tsp4")
-
-[node name="StartScreen" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(992, 544)
-scale = Vector2(5.5, 5.5)
-texture = ExtResource("4_0n0fr")

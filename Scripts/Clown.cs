@@ -179,20 +179,14 @@ public partial class Clown : Enemy
 						spawnPoints ??= Overworld.GetEnemySpawnPoints(GetTree().CurrentScene);
 						var newSpawnPoint = Overworld.GetRandomEnemySpawnPoint(spawnPoints);
 						Position = newSpawnPoint.Position;
-						navigationAgent.TargetPosition = new Vector2(
-							(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
-							(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
-						);
+						navigationAgent.TargetPosition = getPositionOnMap();
 					}
 				}
 			}
 		};
 
 		enemyLostTimer.Timeout += () => {
-			navigationAgent.TargetPosition = new Vector2(
-				(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
-				(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
-			);
+			navigationAgent.TargetPosition = getPositionOnMap();
 			searching = lost;
 
 			if (searching)
@@ -260,57 +254,57 @@ public partial class Clown : Enemy
 		}
 
 		animation = GetAnimationFromDirection(lastDirection);
-		if (animation != null)
+		if (sprite != null && animation != null)
 		{
 			sprite.Animation = animation;
-		}
 
-		bool spritePlaying = sprite.IsPlaying();
+			bool spritePlaying = sprite.IsPlaying();
 
-		// Like and share if you hate magnus
-		if (FlipX) {
-			if (DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing)
-			{
-				if (lastDirection.X == -1)
+			// Like and share if you hate magnus
+			if (FlipX) {
+				if (DecidedToChangeDirectionToFlipOnOneOfTheFourClownsButThisScriptIsInheritedByTheClownSoYouNeedANewPropertyForOneSingleThing)
 				{
-					sprite.Scale = new Vector2(-4, 4);
+					if (lastDirection.X == -1)
+					{
+						sprite.Scale = new Vector2(-4, 4);
+					}
+					else
+					{
+						sprite.Scale = new Vector2(4, 4);
+					}
 				}
 				else
 				{
-					sprite.Scale = new Vector2(4, 4);
+					if (lastDirection.X == 1)
+					{
+						sprite.Scale = new Vector2(-4, 4);
+					}
+					else
+					{
+						sprite.Scale = new Vector2(4, 4);
+					}
 				}
 			}
-			else
-			{
-				if (lastDirection.X == 1)
-				{
-					sprite.Scale = new Vector2(-4, 4);
-				}
-				else
-				{
-					sprite.Scale = new Vector2(4, 4);
-				}
-			}
-		}
 
-		if (Pacified)
-		{
-			sprite.SpeedScale = 0.5f;
-			if (!spritePlaying)
+			if (Pacified)
 			{
-				sprite.Play();
-			}
-		} else if (!lost) {
-			if (spritePlaying && (lastDirection == Vector2.Zero || resting))
-			{
-				sprite.Stop();
-				sprite.SpeedScale = 1f;
-				sprite.Frame = 0;
-			} 
-			else if (!spritePlaying && lastDirection != Vector2.Zero) 
-			{
-				sprite.Play();
-				sprite.SpeedScale = 1f;
+				sprite.SpeedScale = 0.5f;
+				if (!spritePlaying)
+				{
+					sprite.Play();
+				}
+			} else if (!lost) {
+				if (spritePlaying && (lastDirection == Vector2.Zero || resting))
+				{
+					sprite.Stop();
+					sprite.SpeedScale = 1f;
+					sprite.Frame = 0;
+				} 
+				else if (!spritePlaying && lastDirection != Vector2.Zero) 
+				{
+					sprite.Play();
+					sprite.SpeedScale = 1f;
+				}
 			}
 		}
     }

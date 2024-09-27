@@ -6,11 +6,11 @@ using System.Runtime.Serialization;
 public partial class Enemy : CharacterBody2D
 {
 	[Export]
-	public float SearchSpeed { get; set; } = 2f;
+	public float SearchSpeed { get; set; } = 3f;
 	[Export]
-	public float WalkSpeed { get; set; } = 3f;
+	public float WalkSpeed { get; set; } = 5.5f;
 	[Export]
-	public float RunSpeed { get; set; } = 4.5f;
+	public float RunSpeed { get; set; } = 6.5f;
 	[Export]
 	public float focusDistance { get; set; } = 1000f;
 
@@ -31,6 +31,8 @@ public partial class Enemy : CharacterBody2D
 	protected float transparancyAmount = 0f;
 	protected int transparencyDirection = 1;
 
+	protected Vector2 originPosition;
+
 	protected AnimatedSprite2D sprite;
 	protected CollisionShape2D enemyCollider;
 	protected Area2D enemySightbox;
@@ -50,8 +52,23 @@ public partial class Enemy : CharacterBody2D
 
 	protected float currentSpeed;
 
+	protected Vector2 getPositionOnMap()
+	{
+		Vector2 myvect = Vector2.Zero;
+		
+		while (myvect == Vector2.Zero || (myvect-originPosition).Length() > 1400) {
+			myvect = new Vector2(
+				GD.Randi()%MapSize.X,
+				GD.Randi()%MapSize.Y
+			);
+		}
+
+		return myvect;
+	}
+
     public override void _Ready()
     {
+		originPosition = Position;
 		currentSpeed = SearchSpeed;
 
         sprite = GetNode<AnimatedSprite2D>("Sprite");
@@ -119,10 +136,7 @@ public partial class Enemy : CharacterBody2D
 
 				if ((Position-navigationAgent.TargetPosition).Length() <= 10)
 				{
-					navigationAgent.TargetPosition = new Vector2(
-						(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
-						(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
-					);
+					navigationAgent.TargetPosition = getPositionOnMap();
 				}
 			}
 			else
@@ -172,10 +186,7 @@ public partial class Enemy : CharacterBody2D
 	protected void timeout()
 	{
 		if (searching && PathfindingEnable) {
-			navigationAgent.TargetPosition = new Vector2(
-				(GD.Randi()%(MapSize.X*2)) + MapCenter.X - MapSize.X,
-				(GD.Randi()%(MapSize.Y*2)) + MapCenter.Y - MapSize.Y
-			);
+			navigationAgent.TargetPosition = getPositionOnMap();
 			newPathTimer.WaitTime = 5+(GD.Randi()%4);
 		}
 	}

@@ -203,7 +203,7 @@ public partial class Sparky : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		lastDirection = lockDirection(direction);
 		float speedalpha = speedModifier.Red + speedModifier.Yellow + speedModifier.Green + speedModifier.Blue;
-		float mod = Speed + (SpeedBoost * speedalpha);
+		float mod = Speed; //+ (SpeedBoost * speedalpha);
 		velocity = direction * mod;
 
 		heartbeatSound.VolumeDb = Mathf.Lerp(0, 15, speedalpha);

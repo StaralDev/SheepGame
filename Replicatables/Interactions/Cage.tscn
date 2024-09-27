@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Sprites/Cage.cs" id="2_wnvvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eierd"]
-size = Vector2(93, 93)
+size = Vector2(280, 93)
 
 [node name="Cage" instance=ExtResource("1_mnmsn")]
 script = ExtResource("2_wnvvt")
@@ -13,3 +13,4 @@ script = ExtResource("2_wnvvt")
 position = Vector2(0, 0)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_eierd")
+debug_color = Color(0.780505, 0.719904, 0, 0.42)

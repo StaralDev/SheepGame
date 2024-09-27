@@ -38,6 +38,7 @@ tile_set = ExtResource("4_l4c8n")
 
 [node name="Sparky" parent="." instance=ExtResource("1_ojl2g")]
 position = Vector2(-229, -225)
+HeartbeatEnabled = true
 
 [node name="EnemySpawnPoint" parent="." instance=ExtResource("5_fuh1h")]
 position = Vector2(-1311, 600)

@@ -62,11 +62,6 @@ public partial class Global : Node2D
         Overlays.Insert(0, node);
     }
 
-    public void SetScene(PackedScene packedScene)
-    {
-        CallDeferred(MethodName.setSceneDefered, packedScene);
-    }
-
     private void setSceneDefered(PackedScene packedScene)
     {
         SceneTree tree = GetTree();
@@ -77,6 +72,11 @@ public partial class Global : Node2D
         var newScene = Overworld.InstantiateScene(packedScene);
         tree.Root.AddChild(newScene);
         tree.CurrentScene = newScene;
+    }
+
+    public void SetScene(PackedScene packedScene)
+    {
+        CallDeferred(MethodName.setSceneDefered, packedScene);
     }
 
     public override void _Ready()

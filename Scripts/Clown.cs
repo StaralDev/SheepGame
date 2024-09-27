@@ -147,7 +147,10 @@ public partial class Clown : Enemy
 						globalObject.myData.pasifiedData.Yellow
 					)
 					{
-						Overworld.ChangeScene("res://Scenes/WinScene.tscn", GetTree());
+						Vector2 oldPosition = sparky.Position;
+						Overworld.ChangeScene("res://Scenes/MainGame/LightWorld.tscn", GetTree());
+
+						Sparky newSparky = Overworld.GetSparky(GetTree());
 					}
 					
 					sparky.Persue(ColorName, false);

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bemhf28briosf"
-path="res://.godot/imported/FairGroundDay.png-a17bdc40a8903809713f6d7f2780d113.ctex"
+uid="uid://cufjk16dbeyxo"
+path="res://.godot/imported/WinScreen.png-226dcd0acbb935653a44aa47af1210ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtistDropbox/FairGroundDay.png"
-dest_files=["res://.godot/imported/FairGroundDay.png-a17bdc40a8903809713f6d7f2780d113.ctex"]
+source_file="res://Sprites/Backgrounds/WinScreen.png"
+dest_files=["res://.godot/imported/WinScreen.png-226dcd0acbb935653a44aa47af1210ab.ctex"]
 
 [params]
 
